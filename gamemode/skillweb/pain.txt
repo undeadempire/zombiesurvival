@@ -1,0 +1,204 @@
+--------------------------------------HEALTH MODIFIERS----------------------------------------
+
+----------------------------BLOOD ARMOR----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_BLOODARMOR, function(pl, amount)
+	local oldarmor = pl:GetBloodArmor()
+	local oldcap = pl.MaxBloodArmor or 20
+	local new = 20 + math.Clamp(amount, -20, 1000)
+
+	pl.MaxBloodArmor = new
+
+	if SERVER then
+		if oldarmor > oldcap then
+			local overcap = oldarmor - oldcap
+			pl:SetBloodArmor(pl.MaxBloodArmor + overcap)
+		else
+			pl:SetBloodArmor(pl:GetBloodArmor() / oldcap * new)
+		end
+	end
+end)
+
+
+
+--------------------------------------MOVEMENT MODIFIERS--------------------------------------
+----------------------------SPEED----------------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_SPEED, function(pl, amount)
+	pl.SkillSpeedAdd = amount
+end)
+
+----------------------------JUMP POWER-----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_JUMPPOWER_MUL, function(pl, amount)
+	pl.JumpPowerMul = math.Clamp(amount + 1.0, 0.0, 10.0)
+
+	if SERVER then
+		pl:ResetJumpPower()
+	end
+end)
+
+----------------------------SLOWDOWN EFFECT-------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_SLOW_EFF_TAKEN_MUL, function(pl, amount)
+	pl.SlowEffTakenMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+
+
+----------------------------BARRICADE PHASE SPEED------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_BARRICADE_PHASE_SPEED_MUL, function(pl, amount)
+	pl.BarricadePhaseSpeedMul = math.Clamp(amount + 1.0, 0.05, 1000.0)
+end)
+
+----------------------------SIGIL TELEPORT SPEED--------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_SIGIL_TELEPORT_MUL, function(pl, amount)
+	pl.SigilTeleportTimeMul = math.Clamp(amount + 1.0, 0.1, 1000.0)
+end)
+
+
+----------------------------KNOCKDOWN RECOVERY----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_KNOCKDOWN_RECOVERY_MUL, function(pl, amount)
+	pl.KnockdownRecoveryMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+
+----------------------------FALLDAMAGE DAMAGE----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_FALLDAMAGE_DAMAGE_MUL, function(pl, amount)
+	pl.FallDamageDamageMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+
+----------------------------FALLDAMAGE SLOWDOWN--------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_FALLDAMAGE_SLOWDOWN_MUL, function(pl, amount)
+	pl.FallDamageSlowDownMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+
+
+
+--------------------------------------SUPPORT MODIFIERS---------------------------------------
+----------------------------MEDKIT EFFECTIVENESS-------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MEDKIT_EFFECTIVENESS_MUL, function(pl, amount)
+	pl.MedicHealMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------MEDKIT COOLDOWN------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MEDKIT_COOLDOWN_MUL, function(pl, amount)
+	pl.MedicCooldownMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------MEDGUN FIRE DELAY----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MEDGUN_FIRE_DELAY_MUL, function(pl, amount)
+	pl.MedgunFireDelayMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+----------------------------MEDGUN RELOAD SPEED--------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MEDGUN_RELOAD_SPEED_MUL, function(pl, amount)
+	pl.MedgunReloadSpeedMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+
+----------------------------HAMMER SWING DELAY---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_HAMMER_SWING_DELAY_MUL, function(pl, amount)
+	pl.HammerSwingDelayMul = math.Clamp(amount + 1.0, 0.01, 1.0)
+end)
+----------------------------REPAIR RATE----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_REPAIRRATE_MUL, function(pl, amount)
+	pl.RepairRateMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+----------------------------DRONE GUN RANGE------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_DRONE_GUN_RANGE_MUL, function(pl, amount)
+	pl.DroneGunRangeMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+
+----------------------------PROP CARRY CAPACITY---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_PROP_CARRY_CAPACITY_MUL, function(pl, amount)
+	pl.PropCarryCapacityMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------PROP CARRY SLOWDOWN---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_PROP_CARRY_SLOW_MUL, function(pl, amount)
+	pl.PropCarrySlowMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------PROP THROW STRENGTH---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_PROP_THROW_STRENGTH_MUL, function(pl, amount)
+	pl.ObjectThrowStrengthMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+
+
+
+--------------------------------------MELEE MODIFIERS-----------------------------------------
+----------------------------MELEE DAMAGE---------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_DAMAGE_MUL, function(pl, amount)
+	pl.MeleeDamageMultiplier = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+----------------------------MELEE KNOCKBACK------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_KNOCKBACK_MUL, function(pl, amount)
+	pl.MeleeKnockbackMultiplier = math.Clamp(amount + 1.0, 0.0, 10000.0)
+end)
+----------------------------MELEE RANGE-----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_RANGE_MUL, function(pl, amount)
+	pl.MeleeRangeMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+----------------------------MELEE SWING SPEED-----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_SWING_DELAY_MUL, function(pl, amount)
+	pl.MeleeSwingDelayMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+----------------------------MELEE DAMAGE REFLECT-------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_ATTACKER_DMG_REFLECT, function(pl, amount)
+	pl.BarbedArmor = math.Clamp(amount, 0.0, 1000.0)
+end)
+----------------------------MELEE DAMAGE REFLECT PERCENT------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_ATTACKER_DMG_REFLECT_PERCENT, function(pl, amount)
+	pl.BarbedArmorPercent = math.Clamp(amount, 0, 1000.0)
+end)
+----------------------------MELEE POWER ATTACK MULTIPLIER-----------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_POWERATTACK_MUL, function(pl, amount)
+	pl.MeleePowerAttackMul = math.Clamp(amount + 1.0, 0, 1000.0)
+end)
+---------------------------MELEE MOVEMENT SPEED ON KILL------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_MOVEMENTSPEED_ON_KILL, function(pl, amount)
+	pl.MeleeMovementSpeedOnKill = math.Clamp(amount, -15, 1000.0)
+end)
+
+----------------------------UNARMED DAMAGE-------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_UNARMED_DAMAGE_MUL, function(pl, amount)
+	pl.UnarmedDamageMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+----------------------------UNARMED SWING DELAY--------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_UNARMED_SWING_DELAY_MUL, function(pl, amount)
+	pl.UnarmedDelayMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+
+
+
+--------------------------------------DAMAGE MODIFIERS----------------------------------------
+----------------------------MELEE DAMAGE TAKEN---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_MELEE_DAMAGE_TAKEN_MUL, function(pl, amount)
+	pl.MeleeDamageTakenMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------POISON DAMAGE TAKEN---------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_POISON_DAMAGE_TAKEN_MUL, function(pl, amount)
+	pl.PoisonDamageTakenMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------BLEED DAMAGE TAKEN----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_BLEED_DAMAGE_TAKEN_MUL, function(pl, amount)
+	pl.BleedDamageTakenMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+
+----------------------------SELF DAMAGE----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_SELF_DAMAGE_MUL, function(pl, amount)
+	pl.SelfDamageMul = math.Clamp(amount + 1.0, 0.0, 100.0)
+end)
+----------------------------EXPLOSION DAMAGE TAKEN------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_EXP_DAMAGE_TAKEN_MUL, function(pl, amount)
+	pl.ExplosiveDamageTakenMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------FIRE DAMAGE TAKEN-----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_FIRE_DAMAGE_TAKEN_MUL, function(pl, amount)
+	pl.FireDamageTakenMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)\
+----------------------------BLEED SPEED-----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_BLEED_SPEED_MUL, function(pl, amount)
+	pl.BleedSpeedMul = math.Clamp(amount + 1.0, 0.1, 1000.0)
+end)
+----------------------------POISON SPEED----------------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_POISON_SPEED_MUL, function(pl, amount)
+	pl.PoisonSpeedMul = math.Clamp(amount + 1.0, 0.1, 1000.0)
+end)
+----------------------------VISION ALTERATION DURATION--------------------------
+GM:SetSkillModifierFunction(SKILLMOD_VISION_ALTER_DURATION_MUL, function(pl, amount)
+	pl.VisionAlterDurationMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
+----------------------------DIM VISION EFFECT-----------------------------------
+GM:SetSkillModifierFunction(SKILLMOD_DIMVISION_EFF_MUL, function(pl, amount)
+	pl.DimVisionEffMul = math.Clamp(amount + 1.0, 0.0, 1000.0)
+end)
