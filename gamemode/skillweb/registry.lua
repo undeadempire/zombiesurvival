@@ -398,7 +398,7 @@ GM:AddSkill(SKILL_CIRCULATION, "Circulation", GOOD.."+1 maximum blood armor",
 																4,			4,					{SKILL_SANGUINE}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_SANGUINE, "Sanguine", GOOD.."+12 maximum blood armor\n"..BAD.."-6 max health",
 																6,			2,					{}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption"..BAD.."-6 health"..BAD.."+10% eating time",
+GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption\n"..BAD.."-6 health\n"..BAD.."+10% eating time\n",
 																-2,			4,					{}, TREE_HEALTHTREE)
 -- Speed Tree
 GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+0.75 movement speed\n"..BAD.."-0.5 health",
