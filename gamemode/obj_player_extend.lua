@@ -237,7 +237,7 @@ function meta:NearArsenalCrate()
 
 	for _, ent in pairs(arseents) do
 		local nearest = ent:NearestPoint(pos)
-		if pos:DistToSqr(nearest) <= 10000 and (WorldVisible(pos, nearest) or self:TraceLine(100).Entity == ent) then -- 80^2
+		if pos:DistToSqr(nearest) <= 40000 and (WorldVisible(pos, nearest) or self:TraceLine(100).Entity == ent) then -- 80^2
 			return true
 		end
 	end
