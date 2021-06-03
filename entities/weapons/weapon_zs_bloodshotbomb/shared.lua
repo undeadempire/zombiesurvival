@@ -7,3 +7,5 @@ SWEP.ShowViewModel = false
 SWEP.ShowWorldModel = false
 
 SWEP.Primary.Ammo = "bloodshot"
+
+SWEP.MaxStock = 5
