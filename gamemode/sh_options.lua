@@ -1,4 +1,4 @@
--- EDITED BY GEN.WILHELM KEITEL, KINETHIC, KARMACREEPER, AND DESSERT OVERLORD
+-- EDITED BY GEN.WILHELM KEITEL, KINETHIC, KARMACREEPER, DESSERT OVERLORD, AND SOLTANE
 
 GM.ZombieEscapeWeaponsPrimary = {
 	"weapon_zs_zeakbar",
@@ -347,8 +347,8 @@ GM:AddPointShopItem("onyx",				ITEMCAT_GUNS,			65,				"weapon_zs_onyx")
 GM:AddPointShopItem("charon",			ITEMCAT_GUNS,			65,				"weapon_zs_charon")
 GM:AddPointShopItem("akbar",			ITEMCAT_GUNS,			65,				"weapon_zs_akbar")
 GM:AddPointShopItem("oberon",			ITEMCAT_GUNS,			65,				"weapon_zs_oberon")
-GM:AddPointShopItem("hyena",			ITEMCAT_GUNS,			65,				"weapon_zs_hyena")
 GM:AddPointShopItem("pollutor",			ITEMCAT_GUNS,			65,				"weapon_zs_pollutor")
+GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			65,				"weapon_zs_barrage")
 -- Tier 4
 GM:AddPointShopItem("longarm",			ITEMCAT_GUNS,			115,			"weapon_zs_longarm")
 GM:AddPointShopItem("sweeper",			ITEMCAT_GUNS,			115,			"weapon_zs_sweepershotgun")
@@ -363,7 +363,7 @@ GM:AddPointShopItem("stalker",			ITEMCAT_GUNS,			115,			"weapon_zs_m4")
 GM:AddPointShopItem("inferno",			ITEMCAT_GUNS,			115,			"weapon_zs_inferno")
 GM:AddPointShopItem("quasar",			ITEMCAT_GUNS,			115,			"weapon_zs_quasar")
 GM:AddPointShopItem("gluon",			ITEMCAT_GUNS,			115,			"weapon_zs_gluon")
-GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			115,			"weapon_zs_barrage")
+GM:AddPointShopItem("hyena",			ITEMCAT_GUNS,			115,				"weapon_zs_hyena")
 -- Tier 5
 GM:AddPointShopItem("novacolt",			ITEMCAT_GUNS,			200,			"weapon_zs_novacolt")
 GM:AddPointShopItem("bulwark",			ITEMCAT_GUNS,			240,			"weapon_zs_bulwark")
