@@ -1,6 +1,6 @@
 INC_CLIENT()
 
-SWEP.Slot = 4
+SWEP.Slot = 3
 SWEP.SlotPos = 0
 
 SWEP.HUD3DBone = "v_weapon.p90_Parent"
