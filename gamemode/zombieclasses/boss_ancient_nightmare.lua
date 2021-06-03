@@ -7,7 +7,7 @@ CLASS.Help = "controls_ancient_nightmare"
 
 CLASS.Boss = true
 
-CLASS.Health = 2750
+CLASS.Health = 3000
 CLASS.Speed = 160
 
 CLASS.Points = 30

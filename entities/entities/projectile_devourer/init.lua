@@ -4,7 +4,7 @@ local vector_origin = vector_origin
 
 function ENT:Initialize()
 	self:SetModel("models/gibs/HGIBS_rib.mdl")
-	self:PhysicsInitSphere(13)
+	self:PhysicsInitSphere(7)
 	self:SetSolid(SOLID_VPHYSICS)
 	self:SetModelScale(2.2, 0)
 	self:SetupGenericProjectile(false)

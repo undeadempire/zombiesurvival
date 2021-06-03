@@ -6,7 +6,7 @@ SWEP.Base = "weapon_zs_zombie"
 
 SWEP.MeleeDamage = 24
 SWEP.MeleeDamageVsProps = 28
-SWEP.MeleeReach = 150
+SWEP.MeleeReach = 125
 SWEP.MeleeSize = 5
 
 function SWEP:Reload()

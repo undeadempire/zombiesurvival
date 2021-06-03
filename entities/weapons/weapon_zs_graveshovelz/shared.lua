@@ -4,3 +4,4 @@ SWEP.ZombieOnly = true
 SWEP.MeleeDamage = 33
 SWEP.MeleeKnockBack = 0
 SWEP.BleedDamage = 15
+SWEP.MeleeRange = 70
