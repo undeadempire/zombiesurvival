@@ -136,15 +136,16 @@ function ENT:FindZapperTarget(pos, owner)
 	local isheadcrab
 
 	for k, ent in pairs(ents.FindInSphere(pos, 135 * (owner.FieldRangeMul or 1))) do
-		if ent:IsValidLivingZombie() and ent:IsHeadcrab() and not ent:GetZombieClassTable().NeverAlive then
-			isheadcrab = ent:IsHeadcrab()
-			if (isheadcrab or ent:Health() < targethealth) and TrueVisibleFilters(pos, ent:NearestPoint(pos), self, ent) then
+		if self.OnlyHeadcrabs and ent:IsValidLivingZombie() and ent:IsHeadcrab() and not ent:GetZombieClassTable().NeverAlive then
+				isheadcrab = ent:IsHeadcrab()
+				if (isheadcrab or ent:Health() < targethealth) and TrueVisibleFilters(pos, ent:NearestPoint(pos), self, ent) then
+					targethealth = ent:Health()
+					target = ent
+				end
+		elseif ent:IsValidLivingZombie() and not ent:GetZombieClassTable().NeverAlive then
+			if ent:Health() < targethealth and TrueVisibleFilters(pos, ent:NearestPoint(pos), self, ent) then
 				targethealth = ent:Health()
 				target = ent
-
-				if isheadcrab then
-					break
-				end
 			end
 		end
 	end

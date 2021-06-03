@@ -9,7 +9,7 @@ ENT.Damage = 50
 ENT.LegDamage = 10
 
 ENT.ZapCheckDelay = 0.4
-ENT.ZapDelay = 2.25
+ENT.ZapDelay = 3.5
 
 ENT.m_NoNailUnfreeze = true
 ENT.NoNails = true
@@ -19,6 +19,8 @@ ENT.IgnoreBullets = true
 
 ENT.IsBarricadeObject = false
 ENT.AlwaysGhostable = true
+
+ENT.OnlyHeadcrabs = false
 
 function ENT:SetObjectHealth(health)
 	self:SetDTFloat(1, health)
