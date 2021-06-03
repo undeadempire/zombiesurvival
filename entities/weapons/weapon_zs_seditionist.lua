@@ -71,6 +71,7 @@ SWEP.FireAnimSpeed = 1.3
 SWEP.Tier = 4
 
 SWEP.Pierces = 4
+SWEP.HeadshotMulti = 1
 
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_BULLET_PIERCES, 1)
 
@@ -78,6 +79,14 @@ function SWEP:EmitFireSound()
 	self:EmitSound("weapons/deagle/deagle-1.wav", 75, math.random(122, 130), 0.6)
 	self:EmitSound("weapons/elite/elite-1.wav", 75, math.random(82, 88), 0.4, CHAN_WEAPON + 20)
 end
+
+-- function SWEP:BulletCallback(attacker, tr)
+-- 	if SERVER then
+-- 		local hitent = tr.Entity
+
+		
+-- 	end
+-- end
 
 function SWEP:ShootBullets(dmg, numbul, cone)
 	local owner = self:GetOwner()
@@ -110,3 +119,5 @@ function SWEP:ShootBullets(dmg, numbul, cone)
 	owner:LagCompensation(false)
 
 end
+
+

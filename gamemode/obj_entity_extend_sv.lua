@@ -405,7 +405,7 @@ function meta:DamageNails(attacker, inflictor, damage, dmginfo)
 		local applier = self.ReinforceApplier
 		local multi = 0.90
 		local dmgbefore = damage * 0.1
-		local points = dmgbefore / 8
+		local points = dmgbefore / 24
 
 		dmginfo:SetDamage(dmginfo:GetDamage() * multi)
 		damage = damage * multi
