@@ -26,7 +26,7 @@ SWEP.HoldType = "melee2"
 
 SWEP.DamageType = DMG_CLUB
 
-SWEP.MeleeDamage = 44
+SWEP.MeleeDamage = 38
 SWEP.MeleeRange = 68
 SWEP.MeleeSize = 2
 
