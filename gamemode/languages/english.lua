@@ -379,6 +379,7 @@ LANGUAGE.description_howler							= "A terrifying flesh titan with a piercing sh
 LANGUAGE.description_extinctioncrab					= "Vile diseases churn within this giant headcrab.\nThe spores it spits will afflict those near it, reducing the effectiveness of healing."
 LANGUAGE.description_bastardzine					= "Bastardzine requires no description, but it can jump with a 1/100 second delay so I guess that sounts as something."
 LANGUAGE.description_brood_zombie					= "This zombie has been blacked by years of decay and necrosis, in spite this however it is far stronger than a regular zombie"
+LANGUAGE.description_superfast            = "This zombie has been the alpha of all fast zeds and lacerators for years, using its daangerous leave and impressive speed to out match it's foes."
 
 -- Class control schemes
 LANGUAGE.controls_zombie							= "> PRIMARY: Claws\n> SECONDARY: Scream\n> RELOAD: Moan\n> SPRINT: Feign death\n> ON FATAL HIT IN LEGS: Revive / Transform"
@@ -405,6 +406,7 @@ LANGUAGE.controls_the_tickle_monster				= "> PRIMARY: Elastic claws\n> SECONDARY
 LANGUAGE.controls_nightmare							= "> PRIMARY: Death touch\n> SECONDARY: Moan"
 LANGUAGE.controls_ancient_nightmare					= "> PRIMARY: Death claw\n> SECONDARY: Moan"
 LANGUAGE.controls_devourer							= "> PRIMARY: Claw\n> SECONDARY: Reel target in with projectile"
+LANGUAGE.controls_superfast					= "> PRIMARY: Claws\n> SECONDARY: Lunge / Climb wall\n> RELOAD: Scream\n> ON FATAL HIT IN LEGS: Transform"
 LANGUAGE.controls_pukepus							= "> PRIMARY: Puke\n> ON DAMAGE TAKEN: Poison spray\n> ON DEATH: Poison explosion"
 LANGUAGE.controls_bonemesh							= "> PRIMARY: Claws\n> SECONDARY: Toss blood bomb"
 LANGUAGE.controls_wraith							= "> PRIMARY: Claws\n> SECONDARY: Scream\n> INVISIBILITY BASED ON MOVEMENT AND VIEW DISTANCE"
