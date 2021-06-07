@@ -315,6 +315,7 @@ LANGUAGE.class_howler								= "Howler"
 LANGUAGE.class_extinctioncrab						= "Extinction Crab"
 LANGUAGE.class_bastardzine							= "Bastard Zine"
 LANGUAGE.class_brood_zombie							= "Brood Zombie"
+LANGUAGE.class_superfast                = "Super Fast Zombie"
 
 -- Class descriptions
 LANGUAGE.description_zombie							= "The basic zombie is very durable and has powerful claws.\nIt's hard to keep down, especially if not shot in the head."

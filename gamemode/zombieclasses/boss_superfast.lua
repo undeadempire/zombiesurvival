@@ -7,10 +7,11 @@ CLASS.Boss = true
 
 CLASS.KnockbackScale = 0
 
-CLASS.Health = 2000 --1600
-CLASS.Speed = 250
+CLASS.Health = 3000 --2000
+CLASS.Speed = 300 -- 250
 
 CLASS.CanTaunt = true
+CLASS.SetColor(black)
 
 CLASS.FearPerInstance = 0
 
@@ -19,11 +20,11 @@ CLASS.Points = 30
 CLASS.SWEP = "weapon_zs_superfast"
 
 CLASS.Model = Model("models/player/soldier_stripped.mdl")
-CLASS.OverrideModel = Model("models/player/soldier_stripped.mdl")
+CLASS.OverrideModel = Model("models/player/zombie_soldier.mdl")
 
 CLASS.NoHideMainModel = true
 
-CLASS.VoicePitch = 0.95 -- 0.65
+CLASS.VoicePitch = 0.55 -- 0.65
 
 CLASS.PainSounds = {"npc/zombie/zombie_pain1.wav", "npc/zombie/zombie_pain2.wav", "npc/zombie/zombie_pain3.wav", "npc/zombie/zombie_pain4.wav", "npc/zombie/zombie_pain5.wav", "npc/zombie/zombie_pain6.wav"}
 CLASS.DeathSounds = {"npc/zombie/zombie_die1.wav", "npc/zombie/zombie_die2.wav", "npc/zombie/zombie_die3.wav"}
