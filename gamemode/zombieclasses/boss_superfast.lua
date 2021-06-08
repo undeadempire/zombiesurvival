@@ -1,7 +1,7 @@
+CLASS.Disabled = true
 
-if (string.find(game.GetMap(), "zs_somewhere")) then
-	self.SetDisabled = false else
-		self.SetDisabled = true
+if (string.find(game.GetMap(),"zs_somewhere")) then
+		CLASS.Disabled = false
 end
 
 CLASS.Name = "Super Fast Zombie"
@@ -275,3 +275,4 @@ end
 function CLASS:PostPlayerDrawOverrideModel(pl)
 	render.ModelMaterialOverride(nil)
 end
+-- Thanks to Dessert for his help - Soltane
