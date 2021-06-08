@@ -11,7 +11,7 @@ CLASS.Health = 3000 --2000
 CLASS.Speed = 300 -- 250
 
 CLASS.CanTaunt = true
-CLASS.SetColor(black)
+CLASS.SetColor(0, 0, 0, 255)
 
 CLASS.FearPerInstance = 0
 
