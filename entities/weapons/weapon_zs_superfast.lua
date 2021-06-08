@@ -8,7 +8,7 @@ SWEP.ViewModel = Model("models/weapons/v_fza.mdl")
 SWEP.WorldModel = ""
 
 if CLIENT then
-	SWEP.ViewModelFOV = 70
+	SWEP.ViewModelFOV = 75
 end
 
 SWEP.MeleeDelay = 0
