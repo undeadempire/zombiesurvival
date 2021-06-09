@@ -185,7 +185,7 @@ end
 local vecSpineOffset = Vector(1, 3, 0)
 
 CLASS.Icon = "zombiesurvival/killicons/lacerator"
-CLASS.IconColor = Color(255, 45, 0)
+CLASS.IconColor = Color(255, 255, 0)
 
 local render_SetMaterial = render.SetMaterial
 local render_DrawSprite = render.DrawSprite
