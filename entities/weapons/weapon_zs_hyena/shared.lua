@@ -23,7 +23,7 @@ SWEP.ConeMax = 0.0001
 
 SWEP.WalkSpeed = SPEED_SLOW
 
-SWEP.Tier = 3
+SWEP.Tier = 4
 
 SWEP.MaxBombs = 6
 

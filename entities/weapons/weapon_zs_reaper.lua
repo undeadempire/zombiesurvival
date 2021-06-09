@@ -82,45 +82,6 @@ GAMEMODE:AddNewRemantleBranch(SWEP, 1, "'Fervor' UMP", "Replaces the stacking da
 	end
 end)
 
---[[GAMEMODE:AddNewRemantleBranch(SWEP, 2, "'Fatiguer' UMP", "Replaces the stacking damage buff with a stacking reload speed buff.", function(fuckyou)
-	function fuckyou:OnZombieKilled()
-		local killer = self:GetOwner()
-		if killer:IsValid() then
-			local fatiguestatus = killer:GiveStatus("fatigue", 14)
-			if fatiguestatus and fatiguestatus:IsValid() then
-				killer:EmitSound("hl1/ambience/particle_suck1.wav", 55, 150 + 1 * 30, 0.45)
-			end
-		end
-	end
-end)]]
-
---[[GAMEMODE:AddNewRemantleBranch(SWEP, 2, "'Burner' UMP", "", function(fuckyou)
-	function fuckyou:OnZombieKilled()
-		local killer = self:GetOwner()
-		if killer:IsValid() then
-			local burnstatus = killer:GiveStatus("burn", 10)
-			if burnstatus and burnstatus:IsValid() then
-				burnstatus.Applier = killer
-				burnstatus.Damage = 50
-				killer:EmitSound("hl1/ambience/particle_suck1.wav", 55, 150 + 1 * 30, 0.45)
-			end
-		end
-	end
-
-	function fuckyou.BulletCallback(attacker, tr)
-		local hitent = tr.Entity
-		if hitent:IsValidLivingZombie() then
-			local burnstatus = hitent:GiveStatus("burn", 10)
-			if burnstatus and burnstatus:IsValid() then
-				print("yeeeees.")
-				burnstatus.Applier = attacker
-				burnstatus.Damage = 300
-			end
-		end
-	end
-
-end)]]
-
 function SWEP:OnZombieKilled()
 	local killer = self:GetOwner()
 	if killer:IsValid() then
