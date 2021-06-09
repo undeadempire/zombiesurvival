@@ -1,10 +1,4 @@
-CLASS.Disabled = true
-
-if (string.find(game.GetMap(),"zs_somewhere")) then
-		CLASS.Disabled = false
-end
-
-CLASS.Name = "Ultra Super Fast Zombie"
+CLASS.Name = "Super Fast Zombie"
 CLASS.TranslationName = "class_superfast"
 CLASS.Description = "description_superfast"
 CLASS.Help = "controls_superfast"
@@ -13,8 +7,8 @@ CLASS.Boss = true
 
 CLASS.KnockbackScale = 0
 
-CLASS.Health = 3000 --2000
-CLASS.Speed = 275 -- 250
+CLASS.Health = 1800 --2000
+CLASS.Speed = 270 -- 250
 
 CLASS.CanTaunt = true
 
@@ -42,7 +36,7 @@ local vecEyeRight = Vector(4, -4.6, 1)
 
 CLASS.NoHideMainModel = true
 
-CLASS.VoicePitch = 0.25 -- 0.55
+CLASS.VoicePitch = 0.55 -- 0.55
 
 CLASS.PainSounds = {"npc/zombie/zombie_pain1.wav", "npc/zombie/zombie_pain2.wav", "npc/zombie/zombie_pain3.wav", "npc/zombie/zombie_pain4.wav", "npc/zombie/zombie_pain5.wav", "npc/zombie/zombie_pain6.wav"}
 CLASS.DeathSounds = {"npc/zombie/zombie_die1.wav", "npc/zombie/zombie_die2.wav", "npc/zombie/zombie_die3.wav"}
@@ -189,38 +183,6 @@ if SERVER then
 end
 
 local vecSpineOffset = Vector(1, 3, 0)
-local MuscularBones = {
-	["ValveBiped.Bip01_R_Upperarm"] = Vector(1, 2, 3.5),
-	["ValveBiped.Bip01_R_Forearm"] = Vector(1, 2.5, 3),
-	["ValveBiped.Bip01_L_Upperarm"] = Vector(1, 2, 3.5),
-	["ValveBiped.Bip01_L_Forearm"] = Vector(1, 2.5, 3),
-	["ValveBiped.Bip01_L_Hand"] = Vector(1, 2, 4),
-	["ValveBiped.Bip01_R_Hand"] = Vector(1, 2, 4),
-	["ValveBiped.Bip01_L_Thigh"] = Vector(1, 2, 3),
-	["ValveBiped.Bip01_R_Thigh"] = Vector(1, 2, 3),
-	["ValveBiped.Bip01_L_Calf"] = Vector(1, 2, 3),
-	["ValveBiped.Bip01_R_Calf"] = Vector(1, 2, 3),
-	["ValveBiped.Bip01_L_Foot"] = Vector(1, 2, 3),
-	["ValveBiped.Bip01_R_Foot"] = Vector(1, 2, 3),
-}
-local SpineBones = {"ValveBiped.Bip01_Spine2", "ValveBiped.Bip01_Spine4", "ValveBiped.Bip01_Spine1", "ValveBiped.Bip01_Neck1"}
-function CLASS:BuildBonePositions(pl)
-	for _, bone in pairs(SpineBones) do
-		local boneid = pl:LookupBone(bone)
-		if boneid and boneid > 0 then
-			pl:ManipulateBonePosition(boneid, vecSpineOffset)
-		end
-	end
-
-	for bonename, newscale in pairs(MuscularBones) do
-		local boneid = pl:LookupBone(bonename)
-		if boneid and boneid > 0 then
-			pl:ManipulateBoneScale(boneid, newscale)
-		end
-	end
-end
-
-if not CLIENT then return end
 
 CLASS.Icon = "zombiesurvival/killicons/lacerator"
 CLASS.IconColor = Color(255, 45, 0)
