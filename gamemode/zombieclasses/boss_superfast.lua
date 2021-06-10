@@ -4,7 +4,7 @@ if (string.find(game.GetMap(),"zs_somewhere")) then
 		CLASS.Disabled = false
 end
 
-CLASS.Name = "Ultra Super Fast Zombie"
+CLASS.Name = "Imperator Vult"
 CLASS.TranslationName = "class_superfast"
 CLASS.Description = "description_superfast"
 CLASS.Help = "controls_superfast"

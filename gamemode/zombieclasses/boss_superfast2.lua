@@ -1,4 +1,4 @@
-CLASS.Name = "Super Fast Zombie"
+CLASS.Name = "The Emperor"
 CLASS.TranslationName = "class_superfast"
 CLASS.Description = "description_superfast"
 CLASS.Help = "controls_superfast"
