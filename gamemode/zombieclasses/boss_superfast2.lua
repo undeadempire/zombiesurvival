@@ -21,10 +21,9 @@ CLASS.FearPerInstance = 0
 
 CLASS.Points = 30
 
-CLASS.SWEP = "weapon_zs_superfast"
+CLASS.SWEP = "weapon_zs_superfast2"
 
 CLASS.Model = Model("models/player/soldier_stripped.mdl")
-CLASS.OverrideModel = Model("models/player/zombie_soldier.mdl")
 
 CLASS.NoFallDamage = true
 CLASS.NoFallSlowdown = true
@@ -182,19 +181,30 @@ if SERVER then
 	end
 end
 
-local vecSpineOffset = Vector(1, 3, 0)
-
 CLASS.Icon = "zombiesurvival/killicons/lacerator"
 CLASS.IconColor = Color(255, 255, 0)
 
+local vecSpineOffset = Vector(1, 3, 0)
+local MuscularBones = {
+	["ValveBiped.Bip01_R_Upperarm"] = Vector(1, 2, 3.5),
+	["ValveBiped.Bip01_R_Forearm"] = Vector(1, 2.5, 3),
+	["ValveBiped.Bip01_L_Upperarm"] = Vector(1, 2, 3.5),
+	["ValveBiped.Bip01_L_Forearm"] = Vector(1, 2.5, 3),
+	["ValveBiped.Bip01_L_Hand"] = Vector(1, 2, 4),
+	["ValveBiped.Bip01_R_Hand"] = Vector(1, 2, 4),
+	["ValveBiped.Bip01_L_Thigh"] = Vector(1, 2, 3),
+	["ValveBiped.Bip01_R_Thigh"] = Vector(1, 2, 3),
+	["ValveBiped.Bip01_L_Calf"] = Vector(1, 2, 3),
+	["ValveBiped.Bip01_R_Calf"] = Vector(1, 2, 3),
+	["ValveBiped.Bip01_L_Foot"] = Vector(1, 2, 3),
+	["ValveBiped.Bip01_R_Foot"] = Vector(1, 2, 3),
+}
 local render_SetMaterial = render.SetMaterial
 local render_DrawSprite = render.DrawSprite
 local angle_zero = angle_zero
 local LocalToWorld = LocalToWorld
 
-local matSkin = Material("Models/Barnacle/barnacle_sheet")
-local matFlesh = Material("models/flesh")
-local matBlack = CreateMaterial("devourer", "UnlitGeneric", {["$basetexture"] = "Tools/toolsblack", ["$model"] = 1})
+local matFlesh = Material("models/zombie_poison/poisonzombie_sheet.vtf")
 function CLASS:PrePlayerDraw(pl)
 	render.ModelMaterialOverride(matFlesh)
 	render.SetColorModulation(0.45, 0.35, 0.05)
