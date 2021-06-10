@@ -1,7 +1,7 @@
 CLASS.Name = "The Emperor"
-CLASS.TranslationName = "class_superfast"
-CLASS.Description = "description_superfast"
-CLASS.Help = "controls_superfast"
+CLASS.TranslationName = "class_superfast2"
+CLASS.Description = "description_superfast2"
+CLASS.Help = "controls_superfast2"
 
 CLASS.Boss = true
 
