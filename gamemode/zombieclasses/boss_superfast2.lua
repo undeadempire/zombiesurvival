@@ -1,20 +1,14 @@
-CLASS.Disabled = true
-
-if (string.find(game.GetMap(),"zs_somewhere")) then
-		CLASS.Disabled = false
-end
-
-CLASS.Name = "Imperator Vult"
-CLASS.TranslationName = "class_superfast"
-CLASS.Description = "description_superfast"
-CLASS.Help = "controls_superfast"
+CLASS.Name = "The Emperor"
+CLASS.TranslationName = "class_superfast2"
+CLASS.Description = "description_superfast2"
+CLASS.Help = "controls_superfast2"
 
 CLASS.Boss = true
 
 CLASS.KnockbackScale = 0
 
-CLASS.Health = 3000 --2000
-CLASS.Speed = 275 -- 250
+CLASS.Health = 1800 --2000
+CLASS.Speed = 270 -- 250
 
 CLASS.CanTaunt = true
 
@@ -27,10 +21,9 @@ CLASS.FearPerInstance = 0
 
 CLASS.Points = 30
 
-CLASS.SWEP = "weapon_zs_superfast"
+CLASS.SWEP = "weapon_zs_superfast2"
 
 CLASS.Model = Model("models/player/soldier_stripped.mdl")
-CLASS.OverrideModel = Model("models/player/zombie_soldier.mdl")
 
 CLASS.NoFallDamage = true
 CLASS.NoFallSlowdown = true
@@ -42,7 +35,7 @@ local vecEyeRight = Vector(4, -4.6, 1)
 
 CLASS.NoHideMainModel = true
 
-CLASS.VoicePitch = 0.25 -- 0.55
+CLASS.VoicePitch = 0.55 -- 0.55
 
 CLASS.PainSounds = {"npc/zombie/zombie_pain1.wav", "npc/zombie/zombie_pain2.wav", "npc/zombie/zombie_pain3.wav", "npc/zombie/zombie_pain4.wav", "npc/zombie/zombie_pain5.wav", "npc/zombie/zombie_pain6.wav"}
 CLASS.DeathSounds = {"npc/zombie/zombie_die1.wav", "npc/zombie/zombie_die2.wav", "npc/zombie/zombie_die3.wav"}
@@ -188,6 +181,9 @@ if SERVER then
 	end
 end
 
+CLASS.Icon = "zombiesurvival/killicons/lacerator"
+CLASS.IconColor = Color(255, 255, 0)
+
 local vecSpineOffset = Vector(1, 3, 0)
 local MuscularBones = {
 	["ValveBiped.Bip01_R_Upperarm"] = Vector(1, 2, 3.5),
@@ -203,36 +199,12 @@ local MuscularBones = {
 	["ValveBiped.Bip01_L_Foot"] = Vector(1, 2, 3),
 	["ValveBiped.Bip01_R_Foot"] = Vector(1, 2, 3),
 }
-local SpineBones = {"ValveBiped.Bip01_Spine2", "ValveBiped.Bip01_Spine4", "ValveBiped.Bip01_Spine1", "ValveBiped.Bip01_Neck1"}
-function CLASS:BuildBonePositions(pl)
-	for _, bone in pairs(SpineBones) do
-		local boneid = pl:LookupBone(bone)
-		if boneid and boneid > 0 then
-			pl:ManipulateBonePosition(boneid, vecSpineOffset)
-		end
-	end
-
-	for bonename, newscale in pairs(MuscularBones) do
-		local boneid = pl:LookupBone(bonename)
-		if boneid and boneid > 0 then
-			pl:ManipulateBoneScale(boneid, newscale)
-		end
-	end
-end
-
-if not CLIENT then return end
-
-CLASS.Icon = "zombiesurvival/killicons/lacerator"
-CLASS.IconColor = Color(255, 45, 0)
-
 local render_SetMaterial = render.SetMaterial
 local render_DrawSprite = render.DrawSprite
 local angle_zero = angle_zero
 local LocalToWorld = LocalToWorld
 
-local matSkin = Material("Models/Barnacle/barnacle_sheet")
-local matFlesh = Material("models/flesh")
-local matBlack = CreateMaterial("devourer", "UnlitGeneric", {["$basetexture"] = "Tools/toolsblack", ["$model"] = 1})
+local matFlesh = Material("models/zombie_poison/poisonzombie_sheet.vtf")
 function CLASS:PrePlayerDraw(pl)
 	render.ModelMaterialOverride(matFlesh)
 	render.SetColorModulation(0.45, 0.35, 0.05)

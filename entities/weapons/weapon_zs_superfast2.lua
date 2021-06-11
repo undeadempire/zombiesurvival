@@ -8,30 +8,30 @@ SWEP.ViewModel = Model("models/weapons/v_fza.mdl")
 SWEP.WorldModel = ""
 
 if CLIENT then
-	SWEP.ViewModelFOV = 75
+	SWEP.ViewModelFOV = 70
 end
 
-SWEP.MeleeDelay = 0
-SWEP.MeleeReach = 50 -- 45
-SWEP.MeleeDamage = 10 -- 7
+SWEP.MeleeDelay = 0.1
+SWEP.MeleeReach = 40 -- 45
+SWEP.MeleeDamage = 8 -- 7
 SWEP.MeleeForceScale = 0.1
-SWEP.MeleeSize = 5.5 --4.5 -- 1.5
+SWEP.MeleeSize = 4.5 --4.5 -- 1.5
 SWEP.MeleeDamageType = DMG_SLASH
-SWEP.Primary.Delay = 0.28 -- 0.32
+SWEP.Primary.Delay = 0.30 -- 0.32
 
-SWEP.SlowMeleeDelay = 0.6 -- 0.8
-SWEP.SlowMeleeDamage = 21 -- 18
+SWEP.SlowMeleeDelay = 0.5 -- 0.8
+SWEP.SlowMeleeDamage = 20 -- 18
 
-SWEP.PounceDamage = 30 -- 20
-SWEP.PounceDamageVsPlayerMul = 0.7 -- 0.4
+SWEP.PounceDamage = 25 -- 20
+SWEP.PounceDamageVsPlayerMul = 0.8 -- 0.4
 SWEP.PounceDamageType = DMG_IMPACT
-SWEP.PounceReach = 40 -- 36
-SWEP.PounceSize = 15 -- 12
-SWEP.PounceStartDelay = 0.3 -- 0.5
+SWEP.PounceReach = 35 -- 36
+SWEP.PounceSize = 14 -- 12
+SWEP.PounceStartDelay = 0.4 -- 0.5
 SWEP.PounceDelay = 1 -- 1.25
-SWEP.PounceVelocity = 700
+SWEP.PounceVelocity = 600
 
-SWEP.RoarTime = 1.5 -- 1.6
+SWEP.RoarTime = 1 -- 1.6
 
 SWEP.Secondary.Automatic = false
 

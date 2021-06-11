@@ -23,6 +23,7 @@ local draw_SimpleText = draw.SimpleText
 local math_Clamp = math.Clamp
 local math_sin = math.sin
 local math_floor = math.floor
+local scale = math.Round(data:GetScale())
 local EyeAngles = EyeAngles
 local tostring = tostring
 local TEXT_ALIGN_CENTER = TEXT_ALIGN_CENTER
