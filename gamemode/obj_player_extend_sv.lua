@@ -2,21 +2,6 @@ local meta = FindMetaTable("Player")
 local P_Team = meta.Team
 
 local DMG_TAKE_BLEED = DMG_SLASH + DMG_CLUB + DMG_BULLET + DMG_BUCKSHOT + DMG_CRUSH
-
--- function meta:GetRatio()
--- 	if not self:IsSkillActive(SKILL_IRONBLOOD) return 0.5 + self.BloodArmorDamageReductionAdd end
-
--- 	if self:Health() < self:GetMaxHealth() * 0.5 then
--- 		local ibratio = 0.5 + self.BloodArmorDamageReductionAdd + 0.25
--- 	elseif self:Health() >= self:GetMaxHealth() * 0.5 then
--- 		local ibratio = 0.5 + self.BloodArmorDamageReductionAdd - 0.25
--- 	else
--- 		local ibratio = 0
--- 	end
-
--- 	return ibratio
--- end
-
 function meta:ProcessDamage(dmginfo)
 	if not self:IsValidLivingPlayer() then return end --??? Apparently player was null sometimes on server?
 
@@ -208,17 +193,7 @@ function meta:ProcessDamage(dmginfo)
 				end
 			end
 
-			if self:IsSkillActive(SKILL_IRONBLOOD) and self:Health() < self:GetMaxHealth() * 0.5 then
-				ratio = 0.5 + self.BloodArmorDamageReductionAdd + 0.25
-				print("ironblood under half")
-			elseif self:IsSkillActive(SKILL_IRONBLOOD) and self:Health() >= self:GetMaxHealth() * 0.5 then
-				ratio = 0.5 + self.BloodArmorDamageReductionAdd - 0.25
-				print("ironblood over half")
-			else
-				ratio = 0.5 + self.BloodArmorDamageReductionAdd
-				print("ironblood didn't work 5head")
-			end
-			
+			local ratio = 0.5 + self.BloodArmorDamageReductionAdd + (self:IsSkillActive(SKILL_IRONBLOOD) and self:Health() <= self:GetMaxHealth() * 0.5 and 0.25 or 0)
 			local absorb = math.min(self:GetBloodArmor(), damage * ratio)
 			dmginfo:SetDamage(damage - absorb)
 			self:SetBloodArmor(self:GetBloodArmor() - absorb)
