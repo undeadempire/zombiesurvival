@@ -3,7 +3,7 @@ function EFFECT:Init(data)
 	local norm = data:GetNormal()
 	--local mag = data:GetMagnitude()
 	local ent = data:GetEntity()
-	--local scale = math.Round(data:GetScale())
+	local scale = math.Round(data:GetScale())
 
 	if ent:IsPlayer() then
 		ent:Dismember(DISMEMBER_HEAD)

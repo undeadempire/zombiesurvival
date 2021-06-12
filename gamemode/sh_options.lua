@@ -288,12 +288,12 @@ if (string.find(game.GetMap(), "zs_obj")) then
 end
 
 GM:AddStartingItem("stone",				ITEMCAT_OTHER,			5,				"weapon_zs_stone")
-GM:AddStartingItem("grenade",			ITEMCAT_OTHER,			25,				"weapon_zs_grenade")
+GM:AddStartingItem("grenade",			ITEMCAT_OTHER,			15,				"weapon_zs_grenade")
 GM:AddStartingItem("flashbomb",			ITEMCAT_OTHER,			15,				"weapon_zs_flashbomb")
-GM:AddStartingItem("molotov",			ITEMCAT_OTHER,			20,				"weapon_zs_molotov")
+GM:AddStartingItem("molotov",			ITEMCAT_OTHER,			15,				"weapon_zs_molotov")
 GM:AddStartingItem("betty",				ITEMCAT_OTHER,			15,				"weapon_zs_proxymine")
-GM:AddStartingItem("corgasgrenade",		ITEMCAT_OTHER,			25,				"weapon_zs_corgasgrenade")
-GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			35,				"weapon_zs_crygasgrenade").SkillRequirement = SKILL_U_CRYGASGREN
+GM:AddStartingItem("corgasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_corgasgrenade")
+GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_crygasgrenade").SkillRequirement = SKILL_U_CRYGASGREN
 GM:AddStartingItem("detpck",			ITEMCAT_OTHER,			35,				"weapon_zs_detpack").Countables = "prop_detpack"
 item =
 --GM:AddStartingItem("sigfragment",		ITEMCAT_OTHER,			25,				"weapon_zs_sigilfragment")
@@ -303,12 +303,12 @@ item =
 --item.NoClassicMode = true
 --item.SkillRequirement = SKILL_U_CORRUPTEDFRAGMENT
 --item =
-GM:AddStartingItem("medcloud",			ITEMCAT_OTHER,			30,				"weapon_zs_mediccloudbomb")
+GM:AddStartingItem("medcloud",			ITEMCAT_OTHER,			15,				"weapon_zs_mediccloudbomb")
 item.SkillRequirement = SKILL_U_MEDICCLOUD
 item =
-GM:AddStartingItem("nanitecloud",		ITEMCAT_OTHER,			25,				"weapon_zs_nanitecloudbomb")
+GM:AddStartingItem("nanitecloud",		ITEMCAT_OTHER,			15,				"weapon_zs_nanitecloudbomb")
 item.SkillRequirement = SKILL_U_NANITECLOUD
-GM:AddStartingItem("bloodshot",			ITEMCAT_OTHER,			45,				"weapon_zs_bloodshotbomb")
+GM:AddStartingItem("bloodshot",			ITEMCAT_OTHER,			15,				"weapon_zs_bloodshotbomb")
 
 ------------
 -- Points --
