@@ -670,7 +670,7 @@ GM:AddSkill(SKILL_LIGHTWEIGHT, "Lightweight", GOOD.."+6 movement speed with a me
 																-6,			-2,					{}, TREE_MELEETREE)
 GM:AddSkill(SKILL_BLOODLUST, "Bloodlust", "Gain phantom health equal to half the damage taken from zombies\nLose phantom health equal to any healing received\nPhantom health decreases by 5 per second\n"..GOOD.."Heal 25% of damage done with melee from remaining phantom health\n"..BAD.."-50% healing received",
 																-2,			4,					{SKILL_LASTSTAND}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-26% melee swing impact delay",
+GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-26% melee swing impact delay\n"..BAD.."10% chance to miss, dealing no melee damage or knockback",
 																6,			0,					{}, TREE_MELEETREE)													
 
 ----------------------------SPEED----------------------------------------------
