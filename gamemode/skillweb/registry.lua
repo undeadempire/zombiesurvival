@@ -387,7 +387,7 @@ GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 5
 																-5,			-2,					{}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_BLOODARMOR, "Blood Armor", GOOD.."Regenerate 1 blood armor every 1s upto your blood armor max\n"..BAD.."-13 max health\nBase blood armor maximum is 20\nBase blood armor damage absorption is 50%",
 																2,			2,					{SKILL_IRONBLOOD, SKILL_BLOODLETTER, SKILL_D_HEMOPHILIA}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_IRONBLOOD, "Iron Blood", GOOD.."+25% damage reduction from blood armor below 50% max health\n"..BAD.."-25% damage reduction from blood armor above 50% max health\n",
+GM:AddSkill(SKILL_IRONBLOOD, "Iron Blood", GOOD.."+25% damage reduction from blood armor\n"..GOOD.."Bonus doubled when health is 50% or less\n"..BAD.."-10 max blood armor",
 																2,			4,					{--[[SKILL_HAEMOSTASIS,]] SKILL_CIRCULATION}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_D_WEAKNESS, "Debuff: Weakness", GOOD.."+20 starting Worth\n"..GOOD.."+3 end of wave points\n"..BAD.."-45 maximum health",
 																1,			-1,					{}, TREE_HEALTHTREE)
@@ -1026,8 +1026,8 @@ GM:AddSkillModifier(SKILL_AGILEIII, SKILLMOD_JUMPPOWER_MUL, 0.06)
 GM:AddSkillModifier(SKILL_SOFTDET, SKILLMOD_EXP_DAMAGE_TAKEN_MUL, -0.4)
 GM:AddSkillModifier(SKILL_SOFTDET, SKILLMOD_HEALTH, -4)
 
---GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR_DMG_REDUCTION, 0.15)
---GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR, -10)
+GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR_DMG_REDUCTION, 0.15)
+GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR, -10)
 
 GM:AddSkillModifier(SKILL_BLOODLETTER, SKILLMOD_BLOODARMOR_GAIN_MUL, 1)
 GM:AddSkillModifier(SKILL_BLOODLETTER, SKILLMOD_BLOODARMOR_DMG_REDUCTION, -0.10)
