@@ -6,7 +6,7 @@ function SWEP:Eat()
 	if owner:IsSkillActive(SKILL_SUGARRUSH) then
 		local boost = owner:GiveStatus("adrenalineamp", 6)
 		if boost and boost:IsValid() then
-			boost:SetSpeed(35)
+			boost:SetSpeed(20)
 		end
 	end
 
