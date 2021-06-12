@@ -31,7 +31,7 @@ SWEP.BloodDecal = "Blood"
 SWEP.HitDecal = "Impact.Concrete"
 
 SWEP.Headshot = true
-SWEP.HeadshotMultiplier = 2
+SWEP.HeadshotMultiplier = 1.5
 
 SWEP.HitAnim = ACT_VM_HITCENTER
 SWEP.MissAnim = ACT_VM_MISSCENTER
