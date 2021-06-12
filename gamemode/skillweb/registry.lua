@@ -401,7 +401,7 @@ GM:AddSkill(SKILL_TANKER, "Tanker", GOOD.."+20 maximum health\n"..BAD.."-16.75 s
 																-5,			4,					{}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_FORAGER, "Forager", GOOD.."Gain a food item you do not have every 4 resupply uses.",
 																5,			-2,					{SKILL_GOURMET}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_SUGARRUSH, "Sugar Rush", GOOD.."+35 speed boost from food for 6 seconds",
+GM:AddSkill(SKILL_SUGARRUSH, "Sugar Rush", GOOD.."+20 speed boost from food for 6 seconds\n"..BAD.."-5 maximum blood armor\n"..BAD.."-7 health\n"..BAD.."-30% eating speed",
 																4,			0,					{SKILL_GOURMET}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_CIRCULATION, "Circulation", GOOD.."+1 maximum blood armor",
 																4,			4,					{SKILL_SANGUINE}, TREE_HEALTHTREE)
@@ -1073,6 +1073,11 @@ GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_SPEED, -33.75)
 
 -------------REGENERATOR---------------
 GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, .5)
+
+-------------SUGAR RUSH----------------
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_BLOODARMOR, -5)
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_HEALTH, -7)
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_FOODEATTIME_MUL, 1.3)
 
 ---------------------------THE STOICS-------------------------------------------------------
 -------------STOIC 1-------------------
