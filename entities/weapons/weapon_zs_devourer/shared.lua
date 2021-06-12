@@ -21,13 +21,13 @@ function SWEP:SecondaryAttack()
 	self:SetNextSecondaryFire(CurTime() + 3.25)
 	self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)
 
-	self:SetSwingAnimTime(CurTime() + 0.7)
+	self:SetSwingAnimTime(CurTime() + 0.9)
 
 	self:GetOwner():DoReloadEvent()
 
 	self:EmitSound("npc/headcrab_poison/ph_poisonbite3.wav", 75, 46)
 
-	self:SetHookTime(CurTime() + 0.9)
+	self:SetHookTime(CurTime() + 1.2)
 end
 
 function SWEP:Think()
