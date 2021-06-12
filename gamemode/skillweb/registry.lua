@@ -58,8 +58,17 @@ function GM:GetTrinketSkillID(trinketname)
 end
 
 function GM:AddSkillModifier(skillid, modifier, amount)
+	local stramount = tostring(amount)
 	self.SkillModifiers[skillid] = self.SkillModifiers[skillid] or {}
-	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	if isstring(amount) and string.find(stramount, ".") then
+		local pamount = tonumber(stramount)
+		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
+	else
+		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	end
+
 end
 
 function GM:AddSkillFunction(skillid, func)
@@ -374,7 +383,7 @@ GM:AddSkill(SKILL_GOURMET, "Gourmet", GOOD.."+100% recovery from food\n"..BAD.."
 																4,			6,					{}, TREE_HEALTHTREE)]]
 GM:AddSkill(SKILL_BLOODLETTER, "Bloodletter", GOOD.."+100% blood armor generated\n"..BAD.."-10% blood armor damage absorption",
 																0,			4,					{SKILL_ANTIGEN}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 5s(15s)\n"..GOOD.."up to 75% max HP\n"..BAD.."-10 maximum blood armor",--"-50% maximum blood armor",
+GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 5s\n"..GOOD.."up to 75% max HP\n"..BAD.."-50% maximum blood armor",
 																-5,			-2,					{}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_BLOODARMOR, "Blood Armor", GOOD.."Regenerate 1 blood armor every 1s upto your blood armor max\n"..BAD.."-13 max health\nBase blood armor maximum is 20\nBase blood armor damage absorption is 50%",
 																2,			2,					{SKILL_IRONBLOOD, SKILL_BLOODLETTER, SKILL_D_HEMOPHILIA}, TREE_HEALTHTREE)
@@ -647,7 +656,7 @@ GM:AddSkill(SKILL_KNUCKLEMASTER, "Knuckle Master", GOOD.."+75% unarmed strike da
 																6,			-6,					{SKILL_NONE, SKILL_COMBOKNUCKLE}, TREE_MELEETREE)
 GM:AddSkill(SKILL_COMBOKNUCKLE, "Combo Knuckle", GOOD.."Next unarmed strike is 2x faster if hitting something",
 																6,			-4,					{SKILL_CHEAPKNUCKLE, SKILL_CRITICALKNUCKLE}, TREE_MELEETREE)
-GM:AddSkill(SKILL_HEAVYSTRIKES, "Heavy Strikes", GOOD.."+30% melee knockback",
+GM:AddSkill(SKILL_HEAVYSTRIKES, "Heavy Strikes", GOOD.."+30% melee knockback\n"..BAD.."-15 movement speed with melee weapons",
 																2,			0,					{SKILL_BATTLER5, SKILL_JOUSTER}, TREE_MELEETREE)
 GM:AddSkill(SKILL_JOUSTER, "Jouster", GOOD.."+10% melee damage\n"..BAD.."-100% less melee knockback",
 																2,			2,					{}, TREE_MELEETREE)
@@ -710,13 +719,23 @@ GM:SetSkillModifierFunction(SKILLMOD_DEPLOYSPEED_MUL, function(pl, amount)
 end)
 ----------------------------BLOOD ARMOR----------------------------------------
 GM:SetSkillModifierFunction(SKILLMOD_BLOODARMOR, function(pl, amount)
+	local stramount = tostring(amount)
 	local oldarmor = pl:GetBloodArmor()
 	local oldcap = pl.MaxBloodArmor or 20
-	local new = 20 + math.Clamp(amount, -20, 1000)
+	local new
+
+	if string.find(stramount, ".") then 
+		local pamount = tonumber(stramount)
+		new = 20 * pamount
+	else
+		new = 20 + math.Clamp(amount, -20, 1000)
+	end
 
 	pl.MaxBloodArmor = new
 
 	if SERVER then
+		print(new)
+
 		if oldarmor > oldcap then
 			local overcap = oldarmor - oldcap
 			pl:SetBloodArmor(pl.MaxBloodArmor + overcap)
@@ -1053,7 +1072,7 @@ GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_ENDWAVE_POINTS, 1)
 GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_SPEED, -33.75)
 
 -------------REGENERATOR---------------
-GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, -10)
+GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, .5)
 
 ---------------------------THE STOICS-------------------------------------------------------
 -------------STOIC 1-------------------

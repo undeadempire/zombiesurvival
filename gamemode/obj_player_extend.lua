@@ -547,6 +547,10 @@ function meta:ResetSpeed(noset, health)
 		speed = speed + 6
 	end
 
+	if self:IsSkillActive(SKILL_HEAVYSTRIKES) and wep:IsValid() and wep.IsMelee then
+		speed = speed - 15
+	end
+
 	speed = math.max(1, speed)
 
 	if 32 < speed and not GAMEMODE.ZombieEscape then
