@@ -561,7 +561,7 @@ GM:AddSkill(SKILL_INSIGHT, "Buyer's Insight", GOOD.."Locate nearby arsenal crate
 GM:AddSkill(SKILL_U_ZAPPER_ARC, "Unlock: Arc Zapper", GOOD.."Unlocks purchasing the Arc Zapper\nZaps zombies that get nearby, and jumps in an arc\nMid tier deployable and long cooldown\nRequires a steady upkeep of pulse ammo",
 																6,			2,					{SKILL_FIELDAMP, SKILL_TECHNICIAN}, TREE_BUILDINGTREE)
 .AlwaysActive = true
-GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."20% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
+GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."10% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
 																8,			1,					{}, TREE_BUILDINGTREE)
 GM:AddSkill(SKILL_U_CRAFTINGPACK, "Unlock: Crafting Pack", GOOD.."Unlocks purchasing the Sawblade component\n"..GOOD.."Unlocks purchasing the Electrobattery component\n"..GOOD.."Unlocks purchasing the CPU Parts component",
 																4,			-1,					{}, TREE_BUILDINGTREE)
@@ -1230,7 +1230,7 @@ GM:AddSkillFunction(SKILL_D_PALSY, function(pl, active)
 end)
 ----------LATE BUYER------------------
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_WORTH, 50)
-GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.20)
+GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.10)
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_FREE_NAILS, 1)
 
 ------------TAUT-------
