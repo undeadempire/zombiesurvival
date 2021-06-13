@@ -11,12 +11,12 @@ SWEP.UseHands = true
 
 SWEP.CSMuzzleFlashes = false
 
-SWEP.Primary.ClipSize = 4
+SWEP.Primary.ClipSize = 3
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "impactmine"
-SWEP.Primary.Delay = 0.7
-SWEP.Primary.DefaultClip = 4
-SWEP.Primary.Damage = 31
+SWEP.Primary.Delay = 0.8
+SWEP.Primary.DefaultClip = 3
+SWEP.Primary.Damage = 25
 SWEP.Primary.NumShots = 3
 
 SWEP.ConeMax = 8
@@ -24,7 +24,7 @@ SWEP.ConeMin = 7.5
 
 SWEP.WalkSpeed = SPEED_SLOW
 
-SWEP.Tier = 3
+SWEP.Tier = 1
 SWEP.MaxStock = 3
 
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_FIRE_DELAY, -0.05)
