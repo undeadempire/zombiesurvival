@@ -58,16 +58,17 @@ function GM:GetTrinketSkillID(trinketname)
 end
 
 function GM:AddSkillModifier(skillid, modifier, amount)
-	local stramount = tostring(amount)
+	--local stramount = tostring(amount)
 	self.SkillModifiers[skillid] = self.SkillModifiers[skillid] or {}
+	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
 
-	if isstring(amount) and string.find(stramount, ".") then
-		local pamount = tonumber(stramount)
-		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
-	else
-		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+	-- if isstring(amount) and string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
+	-- else
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
 
-	end
+	-- end
 
 end
 
@@ -719,22 +720,23 @@ GM:SetSkillModifierFunction(SKILLMOD_DEPLOYSPEED_MUL, function(pl, amount)
 end)
 ----------------------------BLOOD ARMOR----------------------------------------
 GM:SetSkillModifierFunction(SKILLMOD_BLOODARMOR, function(pl, amount)
-	local stramount = tostring(amount)
+	--local stramount = tostring(amount)
 	local oldarmor = pl:GetBloodArmor()
 	local oldcap = pl.MaxBloodArmor or 20
-	local new
+	--local new 
+	local new = 20 + math.Clamp(amount, -20, 1000)
 
-	if string.find(stramount, ".") then 
-		local pamount = tonumber(stramount)
-		new = 20 * pamount
-	else
-		new = 20 + math.Clamp(amount, -20, 1000)
-	end
+	-- if string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	new = 20 * pamount
+	-- else
+	-- 	new = 20 + math.Clamp(amount, -20, 1000)
+	-- end
 
 	pl.MaxBloodArmor = new
 
 	if SERVER then
-		print(new)
+		--print(new)
 
 		if oldarmor > oldcap then
 			local overcap = oldarmor - oldcap
@@ -1072,7 +1074,7 @@ GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_ENDWAVE_POINTS, 1)
 GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_SPEED, -33.75)
 
 -------------REGENERATOR---------------
-GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, .5)
+GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, -10)
 
 -------------SUGAR RUSH----------------
 GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_BLOODARMOR, -5)

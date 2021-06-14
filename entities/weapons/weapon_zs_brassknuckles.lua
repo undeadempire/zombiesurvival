@@ -31,7 +31,7 @@ SWEP.WorldModel	= "models/weapons/w_grenade.mdl"
 SWEP.Weight = 4
 
 SWEP.MeleeDamage = 22.5
-SWEP.HealAmount = 6
+--SWEP.HealAmount = 6
 
 SWEP.Unarmed = false
 
@@ -48,10 +48,10 @@ GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_FIRE_DELAY, -0.06)
 function SWEP:OnMeleeHit(hitent, hitflesh, tr)
 	if hitent:IsValidLivingZombie() then --= function(self, zombie, total, dmginfo)
 		local owner = self:GetOwner()
-		local healing = self.HealAmount
-		if owner:IsValid() then
-			owner:HealPlayer(owner, healing)
-		end
+		--local healing = self.HealAmount
+		-- if owner:IsValid() then
+		-- 	owner:HealPlayer(owner, healing)
+		-- end
 		--[[ Damage Storage Code:
 			local dealtdmg = 22.5 --self.MeleeDamage --self:GetDamage() 
 				print("===")
