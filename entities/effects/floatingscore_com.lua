@@ -7,6 +7,7 @@ function EFFECT:Init(data)
 
 	self.Pos = data:GetOrigin()
 	self.Amount = math.Round(data:GetMagnitude(), 2)
+	self.Amount = math.Round(self.Amount, 1)
 
 	self.DeathTime = CurTime() + self.LifeTime
 end
