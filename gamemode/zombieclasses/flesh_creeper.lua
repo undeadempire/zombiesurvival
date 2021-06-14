@@ -22,8 +22,8 @@ CLASS.ModelScale = 0.75 -- was 0.65 (65% of scale of antlion model, as small as 
 --[[CLASS.ModelScale = 0.6324555
 CLASS.ClientsideModelScale = 0.4 / CLASS.ModelScale]]
 
-CLASS.Hull = {Vector(-16, -16, 0), Vector(16, 16, 36)}
-CLASS.HullDuck = {Vector(-16, -16, 0), Vector(16, 16, 36)}
+CLASS.Hull = {Vector(-19, -19, 0), Vector(19, 19, 39)}
+CLASS.HullDuck = {Vector(-19, -19, 0), Vector(19, 19, 39)}
 
 CLASS.ViewOffset = Vector(0, 0, 35.5)
 CLASS.ViewOffsetDucked = Vector(0, 0, 35.5)
