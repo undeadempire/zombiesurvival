@@ -18,7 +18,7 @@ AccessorFuncDT(SWEP, "HookTime", "Float", 1)
 function SWEP:SecondaryAttack()
 	if CurTime() < self:GetNextPrimaryFire() or CurTime() < self:GetNextSecondaryFire() then return end
 
-	self:SetNextSecondaryFire(CurTime() + 3.25)
+	self:SetNextSecondaryFire(CurTime() + 4.5)
 	self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)
 
 	self:SetSwingAnimTime(CurTime() + 0.9)

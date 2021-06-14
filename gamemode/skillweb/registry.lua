@@ -58,16 +58,17 @@ function GM:GetTrinketSkillID(trinketname)
 end
 
 function GM:AddSkillModifier(skillid, modifier, amount)
-	local stramount = tostring(amount)
+	--local stramount = tostring(amount)
 	self.SkillModifiers[skillid] = self.SkillModifiers[skillid] or {}
+	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
 
-	if isstring(amount) and string.find(stramount, ".") then
-		local pamount = tonumber(stramount)
-		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
-	else
-		self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+	-- if isstring(amount) and string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
+	-- else
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
 
-	end
+	-- end
 
 end
 
@@ -561,7 +562,7 @@ GM:AddSkill(SKILL_INSIGHT, "Buyer's Insight", GOOD.."Locate nearby arsenal crate
 GM:AddSkill(SKILL_U_ZAPPER_ARC, "Unlock: Arc Zapper", GOOD.."Unlocks purchasing the Arc Zapper\nZaps zombies that get nearby, and jumps in an arc\nMid tier deployable and long cooldown\nRequires a steady upkeep of pulse ammo",
 																6,			2,					{SKILL_FIELDAMP, SKILL_TECHNICIAN}, TREE_BUILDINGTREE)
 .AlwaysActive = true
-GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."20% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
+GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."10% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
 																8,			1,					{}, TREE_BUILDINGTREE)
 GM:AddSkill(SKILL_U_CRAFTINGPACK, "Unlock: Crafting Pack", GOOD.."Unlocks purchasing the Sawblade component\n"..GOOD.."Unlocks purchasing the Electrobattery component\n"..GOOD.."Unlocks purchasing the CPU Parts component",
 																4,			-1,					{}, TREE_BUILDINGTREE)
@@ -719,22 +720,23 @@ GM:SetSkillModifierFunction(SKILLMOD_DEPLOYSPEED_MUL, function(pl, amount)
 end)
 ----------------------------BLOOD ARMOR----------------------------------------
 GM:SetSkillModifierFunction(SKILLMOD_BLOODARMOR, function(pl, amount)
-	local stramount = tostring(amount)
+	--local stramount = tostring(amount)
 	local oldarmor = pl:GetBloodArmor()
 	local oldcap = pl.MaxBloodArmor or 20
-	local new
+	--local new 
+	local new = 20 + math.Clamp(amount, -20, 1000)
 
-	if string.find(stramount, ".") then 
-		local pamount = tonumber(stramount)
-		new = 20 * pamount
-	else
-		new = 20 + math.Clamp(amount, -20, 1000)
-	end
+	-- if string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	new = 20 * pamount
+	-- else
+	-- 	new = 20 + math.Clamp(amount, -20, 1000)
+	-- end
 
 	pl.MaxBloodArmor = new
 
 	if SERVER then
-		print(new)
+		--print(new)
 
 		if oldarmor > oldcap then
 			local overcap = oldarmor - oldcap
@@ -1072,7 +1074,7 @@ GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_ENDWAVE_POINTS, 1)
 GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_SPEED, -33.75)
 
 -------------REGENERATOR---------------
-GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, .5)
+GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, -10)
 
 -------------SUGAR RUSH----------------
 GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_BLOODARMOR, -5)
@@ -1230,7 +1232,7 @@ GM:AddSkillFunction(SKILL_D_PALSY, function(pl, active)
 end)
 ----------LATE BUYER------------------
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_WORTH, 50)
-GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.20)
+GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.10)
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_FREE_NAILS, 1)
 
 ------------TAUT-------
