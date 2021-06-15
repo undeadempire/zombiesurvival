@@ -4,7 +4,7 @@ SWEP.PrintName = "Brood Zombie"
 
 SWEP.Base = "weapon_zs_zombie"
 
-SWEP.MeleeDamage = 30
+SWEP.MeleeDamage = 36
 SWEP.SlowDownScale = 0
 
 SWEP.AlertDelay = 3.5
