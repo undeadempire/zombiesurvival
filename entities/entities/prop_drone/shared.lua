@@ -4,23 +4,23 @@ ENT.RenderGroup = RENDERGROUP_TRANSLUCENT
 ENT.m_NoNailUnfreeze = true
 ENT.NoNails = true
 ENT.CanPackUp = true
-ENT.PackUpTime = 0.25
+ENT.PackUpTime = 0.30
 
-ENT.WrenchRepairMultiplier = 0.666
-ENT.MaxAmmo = 900
+ENT.WrenchRepairMultiplier = 0.6
+ENT.MaxAmmo = 600 -- 900
 
 ENT.FirePitch = 0
 ENT.FireYaw = 0
 
 ENT.Acceleration = 170
-ENT.MaxSpeed = 180
+ENT.MaxSpeed = 175 -- 170
 ENT.HoverSpeed = 40
 ENT.HoverHeight = 92
 ENT.HoverForce = 128
-ENT.TurnSpeed = 550
+ENT.TurnSpeed = 500
 ENT.IdleDrag = 0.25
 
-ENT.MaxHealth = 190
+ENT.MaxHealth = 200 -- 190
 ENT.GunRange = 2750
 ENT.CarryMass = 8000
 
