@@ -20,6 +20,8 @@ ENT.HoverForce = 128
 ENT.TurnSpeed = 550
 ENT.IdleDrag = 0.25
 
+ENT.PrimaryDamage = 18
+
 ENT.MaxHealth = 190
 ENT.GunRange = 2750
 ENT.CarryMass = 8000
