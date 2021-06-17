@@ -58,8 +58,18 @@ function GM:GetTrinketSkillID(trinketname)
 end
 
 function GM:AddSkillModifier(skillid, modifier, amount)
+	--local stramount = tostring(amount)
 	self.SkillModifiers[skillid] = self.SkillModifiers[skillid] or {}
 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	-- if isstring(amount) and string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) * pamount
+	-- else
+	-- 	self.SkillModifiers[skillid][modifier] = (self.SkillModifiers[skillid][modifier] or 0) + amount
+
+	-- end
+
 end
 
 function GM:AddSkillFunction(skillid, func)
@@ -374,11 +384,11 @@ GM:AddSkill(SKILL_GOURMET, "Gourmet", GOOD.."+100% recovery from food\n"..BAD.."
 																4,			6,					{}, TREE_HEALTHTREE)]]
 GM:AddSkill(SKILL_BLOODLETTER, "Bloodletter", GOOD.."+100% blood armor generated\n"..BAD.."-10% blood armor damage absorption",
 																0,			4,					{SKILL_ANTIGEN}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 5s(15s)\n"..GOOD.."up to 75% max HP\n"..BAD.."-10 maximum blood armor",--"-50% maximum blood armor",
+GM:AddSkill(SKILL_REGENERATOR, "Regenerator", GOOD.."Regenerate 1 health every 5s up to 75% max HP\n"..BAD.."-50% maximum blood armor",
 																-5,			-2,					{}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_BLOODARMOR, "Blood Armor", GOOD.."Regenerate 1 blood armor every 1s upto your blood armor max\n"..BAD.."-13 max health\nBase blood armor maximum is 20\nBase blood armor damage absorption is 50%",
 																2,			2,					{SKILL_IRONBLOOD, SKILL_BLOODLETTER, SKILL_D_HEMOPHILIA}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_IRONBLOOD, "Iron Blood", GOOD.."+25% damage reduction from blood armor below 50% max health\n"..BAD.."-25% damage reduction from blood armor above 50% max health\n",
+GM:AddSkill(SKILL_IRONBLOOD, "Iron Blood", GOOD.."+25% damage reduction from blood armor\n"..GOOD.."Bonus doubled when health is 50% or less\n"..BAD.."-10 max blood armor",
 																2,			4,					{--[[SKILL_HAEMOSTASIS,]] SKILL_CIRCULATION}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_D_WEAKNESS, "Debuff: Weakness", GOOD.."+20 starting Worth\n"..GOOD.."+3 end of wave points\n"..BAD.."-45 maximum health",
 																1,			-1,					{}, TREE_HEALTHTREE)
@@ -392,7 +402,7 @@ GM:AddSkill(SKILL_TANKER, "Tanker", GOOD.."+20 maximum health\n"..BAD.."-16.75 s
 																-5,			4,					{}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_FORAGER, "Forager", GOOD.."Gain a food item you do not have every 4 resupply uses.",
 																5,			-2,					{SKILL_GOURMET}, TREE_HEALTHTREE)
-GM:AddSkill(SKILL_SUGARRUSH, "Sugar Rush", GOOD.."+35 speed boost from food for 6 seconds",
+GM:AddSkill(SKILL_SUGARRUSH, "Sugar Rush", GOOD.."+20 speed boost from food for 6 seconds\n"..BAD.."-5 maximum blood armor\n"..BAD.."-7 health\n"..BAD.."-30% eating speed",
 																4,			0,					{SKILL_GOURMET}, TREE_HEALTHTREE)
 GM:AddSkill(SKILL_CIRCULATION, "Circulation", GOOD.."+1 maximum blood armor",
 																4,			4,					{SKILL_SANGUINE}, TREE_HEALTHTREE)
@@ -552,7 +562,7 @@ GM:AddSkill(SKILL_INSIGHT, "Buyer's Insight", GOOD.."Locate nearby arsenal crate
 GM:AddSkill(SKILL_U_ZAPPER_ARC, "Unlock: Arc Zapper", GOOD.."Unlocks purchasing the Arc Zapper\nZaps zombies that get nearby, and jumps in an arc\nMid tier deployable and long cooldown\nRequires a steady upkeep of pulse ammo",
 																6,			2,					{SKILL_FIELDAMP, SKILL_TECHNICIAN}, TREE_BUILDINGTREE)
 .AlwaysActive = true
-GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."20% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
+GM:AddSkill(SKILL_D_LATEBUYER, "Debuff: Late Buyer", GOOD.."+50 starting Worth\n"..GOOD.."10% arsenal discount\n"..GOOD.."Free Nails in the Arsenal Crate\n"..BAD.."Unable to use points at arsenal crates until the second half of the round",
 																8,			1,					{}, TREE_BUILDINGTREE)
 GM:AddSkill(SKILL_U_CRAFTINGPACK, "Unlock: Crafting Pack", GOOD.."Unlocks purchasing the Sawblade component\n"..GOOD.."Unlocks purchasing the Electrobattery component\n"..GOOD.."Unlocks purchasing the CPU Parts component",
 																4,			-1,					{}, TREE_BUILDINGTREE)
@@ -639,7 +649,7 @@ GM:AddSkill(SKILL_GLASSWEAPONS, "Glass Weapons", GOOD.."3.5x melee weapon damage
 																2,			4,					{}, TREE_MELEETREE)
 GM:AddSkill(SKILL_D_CLUMSY, "Debuff: Clumsy", GOOD.."+20 starting Worth\n"..GOOD.."+5 starting points\n"..BAD.."Very easy to be knocked down",
 																-2,			2,					{}, TREE_MELEETREE)
-GM:AddSkill(SKILL_CHEAPKNUCKLE, "Cheap Tactics", GOOD.."Slow targets when striking with a melee weapon from behind",
+GM:AddSkill(SKILL_CHEAPKNUCKLE, "Cheap Tactics", GOOD.."Slow targets when striking with a melee weapon from behind\n"..BAD.."-15% melee damage when not hitting a target from behind",
 																4,			-2,					{SKILL_HEAVYSTRIKES, SKILL_WORTHINESS2}, TREE_MELEETREE)
 GM:AddSkill(SKILL_CRITICALKNUCKLE, "Critical Knuckle", GOOD.."Knockback when using unarmed strikes",
 																6,			-2,					{SKILL_BRASH}, TREE_MELEETREE)
@@ -647,7 +657,7 @@ GM:AddSkill(SKILL_KNUCKLEMASTER, "Knuckle Master", GOOD.."+75% unarmed strike da
 																6,			-6,					{SKILL_NONE, SKILL_COMBOKNUCKLE}, TREE_MELEETREE)
 GM:AddSkill(SKILL_COMBOKNUCKLE, "Combo Knuckle", GOOD.."Next unarmed strike is 2x faster if hitting something",
 																6,			-4,					{SKILL_CHEAPKNUCKLE, SKILL_CRITICALKNUCKLE}, TREE_MELEETREE)
-GM:AddSkill(SKILL_HEAVYSTRIKES, "Heavy Strikes", GOOD.."+30% melee knockback",
+GM:AddSkill(SKILL_HEAVYSTRIKES, "Heavy Strikes", GOOD.."+30% melee knockback\n"..BAD.."-15 movement speed with melee weapons",
 																2,			0,					{SKILL_BATTLER5, SKILL_JOUSTER}, TREE_MELEETREE)
 GM:AddSkill(SKILL_JOUSTER, "Jouster", GOOD.."+10% melee damage\n"..BAD.."-100% less melee knockback",
 																2,			2,					{}, TREE_MELEETREE)
@@ -661,7 +671,7 @@ GM:AddSkill(SKILL_LIGHTWEIGHT, "Lightweight", GOOD.."+6 movement speed with a me
 																-6,			-2,					{}, TREE_MELEETREE)
 GM:AddSkill(SKILL_BLOODLUST, "Bloodlust", "Gain phantom health equal to half the damage taken from zombies\nLose phantom health equal to any healing received\nPhantom health decreases by 5 per second\n"..GOOD.."Heal 25% of damage done with melee from remaining phantom health\n"..BAD.."-50% healing received",
 																-2,			4,					{SKILL_LASTSTAND}, TREE_MELEETREE)
-GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-26% melee swing impact delay",
+GM:AddSkill(SKILL_BRASH, "Brash", GOOD.."-26% melee swing impact delay\n"..BAD.."10% chance to miss, dealing no melee damage or knockback",
 																6,			0,					{}, TREE_MELEETREE)													
 
 ----------------------------SPEED----------------------------------------------
@@ -710,13 +720,24 @@ GM:SetSkillModifierFunction(SKILLMOD_DEPLOYSPEED_MUL, function(pl, amount)
 end)
 ----------------------------BLOOD ARMOR----------------------------------------
 GM:SetSkillModifierFunction(SKILLMOD_BLOODARMOR, function(pl, amount)
+	--local stramount = tostring(amount)
 	local oldarmor = pl:GetBloodArmor()
 	local oldcap = pl.MaxBloodArmor or 20
+	--local new 
 	local new = 20 + math.Clamp(amount, -20, 1000)
+
+	-- if string.find(stramount, ".") then
+	-- 	local pamount = tonumber(stramount)
+	-- 	new = 20 * pamount
+	-- else
+	-- 	new = 20 + math.Clamp(amount, -20, 1000)
+	-- end
 
 	pl.MaxBloodArmor = new
 
 	if SERVER then
+		--print(new)
+
 		if oldarmor > oldcap then
 			local overcap = oldarmor - oldcap
 			pl:SetBloodArmor(pl.MaxBloodArmor + overcap)
@@ -1007,8 +1028,8 @@ GM:AddSkillModifier(SKILL_AGILEIII, SKILLMOD_JUMPPOWER_MUL, 0.06)
 GM:AddSkillModifier(SKILL_SOFTDET, SKILLMOD_EXP_DAMAGE_TAKEN_MUL, -0.4)
 GM:AddSkillModifier(SKILL_SOFTDET, SKILLMOD_HEALTH, -4)
 
---GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR_DMG_REDUCTION, 0.15)
---GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR, -10)
+GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR_DMG_REDUCTION, 0.15)
+GM:AddSkillModifier(SKILL_IRONBLOOD, SKILLMOD_BLOODARMOR, -10)
 
 GM:AddSkillModifier(SKILL_BLOODLETTER, SKILLMOD_BLOODARMOR_GAIN_MUL, 1)
 GM:AddSkillModifier(SKILL_BLOODLETTER, SKILLMOD_BLOODARMOR_DMG_REDUCTION, -0.10)
@@ -1054,6 +1075,11 @@ GM:AddSkillModifier(SKILL_D_SLOW, SKILLMOD_SPEED, -33.75)
 
 -------------REGENERATOR---------------
 GM:AddSkillModifier(SKILL_REGENERATOR, SKILLMOD_BLOODARMOR, -10)
+
+-------------SUGAR RUSH----------------
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_BLOODARMOR, -5)
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_HEALTH, -7)
+GM:AddSkillModifier(SKILL_SUGARRUSH, SKILLMOD_FOODEATTIME_MUL, 1.3)
 
 ---------------------------THE STOICS-------------------------------------------------------
 -------------STOIC 1-------------------
@@ -1206,7 +1232,7 @@ GM:AddSkillFunction(SKILL_D_PALSY, function(pl, active)
 end)
 ----------LATE BUYER------------------
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_WORTH, 50)
-GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.20)
+GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_ARSENAL_DISCOUNT, -0.10)
 GM:AddSkillModifier(SKILL_D_LATEBUYER, SKILLMOD_FREE_NAILS, 1)
 
 ------------TAUT-------
