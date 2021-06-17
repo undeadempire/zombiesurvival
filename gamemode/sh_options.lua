@@ -148,7 +148,6 @@ GM:AddStartingItem("stbbr",				ITEMCAT_GUNS,			40,				"weapon_zs_stubber")
 GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			40,				"weapon_zs_crackler")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
 GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
-GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
 GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
 
 GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
