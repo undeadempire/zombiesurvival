@@ -147,7 +147,12 @@ GM:AddStartingItem("stbbr",				ITEMCAT_GUNS,			40,				"weapon_zs_stubber")
 GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			40,				"weapon_zs_crackler")
 GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
+<<<<<<< HEAD
 GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
+=======
+GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			45,				"weapon_zs_minelayer")
+GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
+>>>>>>> 20a7014ae429d01d985881e08a8a21f65a20c3e0
 
 GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
 GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			20,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
@@ -326,6 +331,7 @@ GM:AddPointShopItem("crklr",			ITEMCAT_GUNS,			15,				"weapon_zs_crackler", nil,
 GM:AddPointShopItem("sling",			ITEMCAT_GUNS,			10,				"weapon_zs_slinger", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_slinger") end)
 GM:AddPointShopItem("z9000",			ITEMCAT_GUNS,			15,				"weapon_zs_z9000", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_z9000") end)
 GM:AddPointShopItem("minelayer",		ITEMCAT_GUNS,			20,				"weapon_zs_minelayer", nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_minelayer") end)
+GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			20,				"weapon_zs_barrage",nil, nil, nil, function(pl) pl:GiveEmptyWeapon("weapon_zs_barrage") end)
 -- Tier 2
 GM:AddPointShopItem("glock3",			ITEMCAT_GUNS,			35,				"weapon_zs_glock3")
 GM:AddPointShopItem("magnum",			ITEMCAT_GUNS,			35,				"weapon_zs_magnum")
@@ -348,7 +354,6 @@ GM:AddPointShopItem("charon",			ITEMCAT_GUNS,			65,				"weapon_zs_charon")
 GM:AddPointShopItem("akbar",			ITEMCAT_GUNS,			65,				"weapon_zs_akbar")
 GM:AddPointShopItem("oberon",			ITEMCAT_GUNS,			65,				"weapon_zs_oberon")
 GM:AddPointShopItem("pollutor",			ITEMCAT_GUNS,			65,				"weapon_zs_pollutor")
-GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			65,				"weapon_zs_barrage")
 -- Tier 4
 GM:AddPointShopItem("longarm",			ITEMCAT_GUNS,			115,			"weapon_zs_longarm")
 GM:AddPointShopItem("sweeper",			ITEMCAT_GUNS,			115,			"weapon_zs_sweepershotgun")
