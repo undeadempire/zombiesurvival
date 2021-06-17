@@ -9,14 +9,13 @@ CLASS.Model = Model("models/player/zombie_fast.mdl")
 
 CLASS.Wave = 3 / 6
 
-CLASS.Infliction = 0.6 -- We auto-unlock this class if 50% of humans are dead regardless of what wave it is.
 if GM.CurrentWave == 1 then
 	CLASS.Infliction = 0.8 -- 80% on wave 1
-  elseif GM.CurrentWave == 2 then
+elseif GM.CurrentWave == 2 then
 	CLASS.Infliction = 0.7 -- 70% on wave 2
-  else 
+else
 	CLASS.Infliction = 0.5 -- 50% on wave 3
-  end
+end
 
 CLASS.Revives = true
 
