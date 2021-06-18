@@ -4,6 +4,7 @@ SWEP.PrintName = "Bloated Zombie"
 
 SWEP.Base = "weapon_zs_zombie"
 
+SWEP.MeleeDamageVsProps = 27
 SWEP.MeleeDamage = 31
 SWEP.MeleeForceScale = 1.25
 
