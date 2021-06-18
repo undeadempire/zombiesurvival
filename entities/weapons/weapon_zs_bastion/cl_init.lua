@@ -10,7 +10,7 @@ SWEP.ShowWorldModel = false
 SWEP.ViewModelFOV = 70
 SWEP.ViewModelFlip = false
 
-SWEP.Slot = 4
+SWEP.Slot = 3
 SWEP.SlotPos = 0
 
 SWEP.VElements = {
