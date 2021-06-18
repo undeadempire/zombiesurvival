@@ -1,12 +1,14 @@
 EFFECT.LifeTime = 3
 
 function EFFECT:Init(data)
+
 	self:SetRenderBounds(Vector(-64, -64, -64), Vector(64, 64, 64))
 
 	self.Seed = math.Rand(0, 10)
 
 	self.Pos = data:GetOrigin()
 	self.Amount = math.Round(data:GetMagnitude(), 2)
+	self.Amount = math.Round(self.Amount, 1)
 
 	self.DeathTime = CurTime() + self.LifeTime
 end
@@ -23,7 +25,7 @@ local draw_SimpleText = draw.SimpleText
 local math_Clamp = math.Clamp
 local math_sin = math.sin
 local math_floor = math.floor
-local scale = math.Round(data:GetScale())
+--local scale = math.Round(data:GetScale())
 local EyeAngles = EyeAngles
 local tostring = tostring
 local TEXT_ALIGN_CENTER = TEXT_ALIGN_CENTER

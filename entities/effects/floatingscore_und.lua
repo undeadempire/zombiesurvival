@@ -17,7 +17,7 @@ function EFFECT:Init(data)
 
 	self.Pos = data:GetOrigin()
 
-	local amount = math.Round(data:GetMagnitude(), 2)
+	local amount = math.Round(data:GetMagnitude())
 	if amount > 1 then
 		self.Message = amount.." BRAINS!"
 	else

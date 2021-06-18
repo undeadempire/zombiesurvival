@@ -148,7 +148,7 @@ GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			40,				"weapon_zs_crackler")
 GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
 GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			45,				"weapon_zs_minelayer")
-GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
+GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
 
 GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
 GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			20,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
@@ -289,7 +289,7 @@ if (string.find(game.GetMap(), "zs_obj")) then
 end
 
 GM:AddStartingItem("stone",				ITEMCAT_OTHER,			5,				"weapon_zs_stone")
-GM:AddStartingItem("grenade",			ITEMCAT_OTHER,			20,				"weapon_zs_grenade")
+GM:AddStartingItem("grenade",			ITEMCAT_OTHER,			15,				"weapon_zs_grenade")
 GM:AddStartingItem("flashbomb",			ITEMCAT_OTHER,			15,				"weapon_zs_flashbomb")
 GM:AddStartingItem("molotov",			ITEMCAT_OTHER,			15,				"weapon_zs_molotov")
 GM:AddStartingItem("betty",				ITEMCAT_OTHER,			15,				"weapon_zs_proxymine")

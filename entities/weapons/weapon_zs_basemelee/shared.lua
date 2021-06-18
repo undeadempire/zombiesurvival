@@ -31,7 +31,7 @@ SWEP.BloodDecal = "Blood"
 SWEP.HitDecal = "Impact.Concrete"
 
 SWEP.Headshot = true
-SWEP.HeadshotMultiplier = 2
+SWEP.HeadshotMultiplier = 1.5
 
 SWEP.HitAnim = ACT_VM_HITCENTER
 SWEP.MissAnim = ACT_VM_MISSCENTER
@@ -274,8 +274,10 @@ function SWEP:PostHitUtil(owner, hitent, dmginfo, tr, vel)
 	-- Perform our own knockback vs. players
 	if hitent:IsPlayer() then
 		local knockback = self.MeleeKnockBack * (owner.MeleeKnockbackMultiplier or 1)
-		if knockback > 0 then
+		if knockback > 0 and not self.BrashNoKnockback then
 			hitent:ThrowFromPositionSetZ(tr.StartPos, knockback, nil, true)
+		elseif self.BrashNoKnockback then
+			self.BrashNoKnockback = false
 		end
 
 		if owner.MeleeLegDamageAdd and owner.MeleeLegDamageAdd > 0 then
@@ -325,22 +327,16 @@ function SWEP:MeleeHitEntity(tr, hitent, damagemultiplier)
 	if hitent:IsPlayer() then
 		self:PlayerHitUtil(owner, damage, hitent, dmginfo)
 
+		if owner:IsSkillActive(SKILL_BRASH) and (math.random(1, 10)) == 10 then
+			dmginfo:SetDamage(0)
+			self.BrashNoKnockback = true
+		end
+
 		if SERVER then
 			hitent:SetLastHitGroup(tr.HitGroup)
 			if tr.HitGroup == HITGROUP_HEAD and self.Headshot then
 				hitent:SetWasHitInHead()
-				--print("headshot")
-				--[[local dmginfo = DamageInfo()
-				dmginfo:SetDamagePosition(tr.HitPos)
-				dmginfo:SetAttacker(owner)
-				dmginfo:SetInflictor(self)
-				dmginfo:SetDamageType(self.DamageType)]]
 				dmginfo:SetDamage(damage * self.HeadshotMultiplier)
-				--dmginfo:SetDamageForce(math.min(self.MeleeDamage, 50) * 50 * owner:GetAimVector())
-			--[[elseif tr.HitGroup == HITGROUP_LEFTLEG or HITGROUP_RIGHTLEG then
-				dmginfo:SetDamage(damage * 0.5)
-			else --if tr.HitGroup == HITGROUP_CHEST or HITGROUP_STOMACH or HITGROUP_LEFTARM or HITGROUP_RIGHTARM
-				--dmginfo:SetDamage(damage)]]
 			end
 
 			if hitent:WouldDieFrom(damage, tr.HitPos) then
