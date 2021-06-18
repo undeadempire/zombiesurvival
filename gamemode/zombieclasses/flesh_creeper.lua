@@ -18,12 +18,14 @@ CLASS.VoicePitch = 0.55
 CLASS.PainSounds = {Sound("npc/barnacle/barnacle_pull1.wav"), Sound("npc/barnacle/barnacle_pull2.wav"), Sound("npc/barnacle/barnacle_pull3.wav"), Sound("npc/barnacle/barnacle_pull4.wav")}
 CLASS.DeathSounds = {Sound("npc/barnacle/barnacle_die1.wav"), Sound("npc/barnacle/barnacle_die2.wav")}
 
+
 CLASS.ModelScale = 0.80 -- was 0.65 (65% of scale of antlion model, as small as some headcrabs)
 --[[CLASS.ModelScale = 0.6324555
 CLASS.ClientsideModelScale = 0.4 / CLASS.ModelScale]]
 
 CLASS.Hull = {Vector(-22, -22, 0), Vector(22, 22, 42)}
 CLASS.HullDuck = {Vector(-19, -19, 0), Vector(22, 22, 42)}
+
 
 CLASS.ViewOffset = Vector(0, 0, 35.5)
 CLASS.ViewOffsetDucked = Vector(0, 0, 35.5)

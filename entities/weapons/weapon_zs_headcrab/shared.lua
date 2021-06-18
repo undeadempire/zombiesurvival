@@ -16,7 +16,7 @@ SWEP.Secondary.DefaultClip = -1
 SWEP.Secondary.Automatic = true
 SWEP.Secondary.Ammo	= "none"
 
-SWEP.PounceDamage = 8
+SWEP.PounceDamage = 5
 SWEP.PounceDamageType = DMG_SLASH
 
 SWEP.NoHitRecovery = 0.75
