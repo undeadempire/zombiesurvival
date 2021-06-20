@@ -137,6 +137,7 @@ GM.AmmoResupply = table.ToAssoc({"ar2", "pistol", "smg1", "357", "xbowbolt", "bu
 -- Worth --
 -----------
 --GM:AddStartingItem("accel",				ITEMCAT_GUNS,			110,				"weapon_zs_accelerator")
+GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("pshtr",				ITEMCAT_GUNS,			30,				"weapon_zs_peashooter")
 GM:AddStartingItem("cpist",				ITEMCAT_GUNS,			30,				"weapon_zs_chempistol")
 GM:AddStartingItem("btlax",				ITEMCAT_GUNS,			30,				"weapon_zs_battleaxe")
@@ -145,10 +146,9 @@ GM:AddStartingItem("blstr",				ITEMCAT_GUNS,			30,				"weapon_zs_blaster")
 GM:AddStartingItem("tossr",				ITEMCAT_GUNS,			40,				"weapon_zs_tosser")
 GM:AddStartingItem("stbbr",				ITEMCAT_GUNS,			40,				"weapon_zs_stubber")
 GM:AddStartingItem("crklr",				ITEMCAT_GUNS,			40,				"weapon_zs_crackler")
-GM:AddStartingItem("sling",				ITEMCAT_GUNS,			30,				"weapon_zs_slinger")
 GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
-GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			45,				"weapon_zs_minelayer")
-GM:AddPointShopItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
+GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
+GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
 
 GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
 GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			20,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
