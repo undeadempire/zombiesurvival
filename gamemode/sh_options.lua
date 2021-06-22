@@ -150,8 +150,8 @@ GM:AddStartingItem("z9000",				ITEMCAT_GUNS,			40,				"weapon_zs_z9000")
 GM:AddStartingItem("minelayer",			ITEMCAT_GUNS,			40,				"weapon_zs_minelayer")
 GM:AddStartingItem("barrage",			ITEMCAT_GUNS,			40,				"weapon_zs_barrage")
 
-GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			10,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
-GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			20,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
+GM:AddStartingItem("3scrap",			ITEMCAT_AMMO,			5,				nil,			"3 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(3, "scrap", true) end)
+GM:AddStartingItem("6scrap",			ITEMCAT_AMMO,			10,				nil,			"6 scrap ammo",					nil,		"ammo_scrap",			function(pl) pl:GiveAmmo(6, "scrap", true) end)
 GM:AddStartingItem("2chcp",				ITEMCAT_AMMO,			10,				nil,			"40 chemical ammo",				nil,		"ammo_chemical",		function(pl) pl:GiveAmmo(40, "chemical", true) end)
 GM:AddStartingItem("3chcp",				ITEMCAT_AMMO,			15,				nil,			"60 chemical ammo",				nil,		"ammo_chemical",		function(pl) pl:GiveAmmo(60, "chemical", true) end)
 GM:AddStartingItem("2pcp",				ITEMCAT_AMMO,			10,				nil,			"40 pistol ammo",				nil,		"ammo_pistol",			function(pl) pl:GiveAmmo(40, "pistol", true) end)
@@ -826,7 +826,7 @@ GM.NoSuicideWave = 1
 GM.WaveZeroLength = 180
 
 -- Time humans have between waves to do stuff without NEW zombies spawning. Any dead zombies will be in spectator (crow) view and any living ones will still be living.
-GM.WaveIntermissionLength = 60
+GM.WaveIntermissionLength = 70
 
 -- Time in seconds between end round and next map.
 GM.EndGameTime = 65
