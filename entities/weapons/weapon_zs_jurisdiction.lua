@@ -71,9 +71,9 @@ SWEP.Base = "weapon_zs_baseshotgun"
 SWEP.CSMuzzleFlashes = false
 
 SWEP.Primary.Sound = Sound("weapons/zs_sawnoff/sawnoff_fire1.ogg")
-SWEP.Primary.Damage = 13
-SWEP.Primary.NumShots = 10
-SWEP.Primary.Delay = 0.8
+SWEP.Primary.Damage = 15
+SWEP.Primary.NumShots = 11
+SWEP.Primary.Delay = 0.6
 SWEP.Primary.ClipSize = 2
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "buckshot"
