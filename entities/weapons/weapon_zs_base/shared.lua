@@ -67,9 +67,9 @@ end
 
 function SWEP:PrimaryAttack()
 	if not self:CanPrimaryAttack() then return end
-
-	self:SetNextPrimaryFire(CurTime() + self:GetFireDelay())
-
+	
+	self:SetNextTickAdjPrimaryFire()
+	
 	self:EmitFireSound()
 	self:TakeAmmo()
 	self:ShootBullets(self.Primary.Damage, self.Primary.NumShots, self:GetCone())
@@ -322,6 +322,19 @@ end
 function SWEP:GetFireDelay()
 	local owner = self:GetOwner()
 	return self.Primary.Delay / (owner:GetStatus("frost") and 0.7 or 1) -- explains what was going on with Orphic
+end
+
+function SWEP:SetNextTickAdjPrimaryFire()
+	local owner = self:GetOwner()
+	local cycletime = self.Primary.Delay / (owner:GetStatus("frost") and .7 or 1)
+	local curatt = self:GetNextPrimaryFire()
+	local diff = CurTime() - curatt
+
+	if diff > engine.TickInterval() or diff < 0 then
+		curatt = CurTime()
+	end
+
+	self:SetNextPrimaryFire(curatt + cycletime)
 end
 
 function SWEP:ShootBullets(dmg, numbul, cone)
