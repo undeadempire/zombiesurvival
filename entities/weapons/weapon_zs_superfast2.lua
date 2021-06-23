@@ -12,7 +12,7 @@ if CLIENT then
 end
 
 SWEP.MeleeDelay = 0.1
-SWEP.MeleeReach = 40 -- 45
+SWEP.MeleeReach = 45 -- 45
 SWEP.MeleeDamage = 8 -- 7
 SWEP.MeleeForceScale = 0.1
 SWEP.MeleeSize = 4.5 --4.5 -- 1.5
@@ -25,7 +25,7 @@ SWEP.SlowMeleeDamage = 20 -- 18
 SWEP.PounceDamage = 25 -- 20
 SWEP.PounceDamageVsPlayerMul = 0.8 -- 0.4
 SWEP.PounceDamageType = DMG_IMPACT
-SWEP.PounceReach = 35 -- 36
+SWEP.PounceReach = 36 -- 32
 SWEP.PounceSize = 14 -- 12
 SWEP.PounceStartDelay = 0.4 -- 0.5
 SWEP.PounceDelay = 1 -- 1.25
