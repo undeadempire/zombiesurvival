@@ -21,6 +21,19 @@ SWEP.FullWalkSpeed = SPEED_SLOW
 
 SWEP.NoDeploySpeedChange = true
 
+if SERVER then
+    function SWEP:Think()
+        for _, ent in ent:GetOwner() == self:GetOwner() do
+            if ent:GetExplodeTime() == 0 then
+                ent:SetExplodeTime(CurTime() + ent.ExplosionDelay)
+                return
+            end
+        end
+    
+        self:GetOwner():StripWeapon(self:GetClass())
+    end
+    end
+
 function SWEP:Initialize()
 	self:SetWeaponHoldType("slam")
 	GAMEMODE:DoChangeDeploySpeed(self)
