@@ -51,7 +51,7 @@ GAMEMODE:SetPrimaryWeaponModifier(SWEP, WEAPON_MODIFIER_RELOAD_SPEED, 0.07)
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_CLIP_SIZE, 1)
 GAMEMODE:AddNewRemantleBranch(SWEP, 1, "Lithe Stick", "Decreased damage but faster reload, and more knockback", function(wept)
 	wept.Primary.Damage = wept.Primary.Damage * 0.65
-	wept.ReloadSpeed = wept.ReloadSpeed * 1.05
+	wept.ReloadSpeed = wept.ReloadSpeed * 1.50
 	wept.Primary.Delay = wept.Primary.Delay * 0.6
 	wept.Knockback = 100
 	wept.WalkSpeed = SPEED_SLOWER
