@@ -13,11 +13,13 @@ end
 
 SWEP.ViewModel = "models/weapons/v_c4.mdl"
 SWEP.WorldModel = Model("models/weapons/w_c4_planted.mdl")
+SWEP.UseHands = true
 
 SWEP.Primary.ClipSize = -1
 SWEP.Primary.DefaultClip = -1
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "none"
+Swep.Primary.Delay = 1.5
 
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
