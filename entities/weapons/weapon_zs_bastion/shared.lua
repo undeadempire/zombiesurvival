@@ -1,5 +1,5 @@
 SWEP.PrintName = "'Bastion' Particle Generator"
-SWEP.Description = "Fires stationary particles of light that spews energy at an angle."
+SWEP.Description = "Fires stationary particles of light that spew energy at an angle."
 
 SWEP.Base = "weapon_zs_baseproj"
 

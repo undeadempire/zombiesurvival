@@ -19,18 +19,19 @@ function ENT:Initialize()
 end
 
 function ENT:Think()
+	local owner = self:GetOwner()
+
 	if self.PhysicsData then
 		self:Hit(self.PhysicsData.HitPos, self.PhysicsData.HitNormal, self.PhysicsData.HitEntity)
 	end
 
-	if self.Exploded then
+	if self.Exploded or not owner:IsValidLivingHuman() then
 		self:Remove()
 	end
 
 	if CurTime() > self.NextShoot then
 		self.NextShoot = CurTime() + 0.1
 
-		local owner = self:GetOwner()
 		if not owner:IsValidLivingHuman() then owner = self end
 
 		self:FireBulletsLua(self:GetPos() + self:GetForward() * 10, self:GetForward(), 5, 1, self.ProjDamage, owner, 0.01, "tracer_pcutter", BulletCallback, nil, nil, nil, nil, self)
