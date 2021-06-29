@@ -450,7 +450,7 @@ GM:AddPointShopItem("nail",				ITEMCAT_AMMO,			1,				nil,							"Nail",							"I
 item.IsNail = true
 
 item = 
-GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			10,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
+GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			5,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
 item.NoScrapCraft = true
 item.IsNail = true
 
