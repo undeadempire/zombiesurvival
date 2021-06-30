@@ -6,7 +6,7 @@ function ENT:Initialize()
 
 	self:SetModel("models/Items/ammocrate_ar2.mdl")
 	self:SetMoveType(MOVETYPE_NONE)
-	self:PhysicsInitSphere(3)
+	self:PhysicsInitSphere(5)
 	self:SetCollisionGroup(COLLISION_GROUP_DEBRIS_TRIGGER)
 	self:SetUseType(SIMPLE_USE)
 end
