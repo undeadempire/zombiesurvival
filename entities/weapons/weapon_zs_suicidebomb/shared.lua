@@ -21,6 +21,7 @@ SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "none"
 SWEP.Primary.Delay = 15
 SWEP.Idle = 1
+SWEP.Undroppable = true
 
 SWEP.Secondary.ClipSize = -1
 SWEP.Secondary.DefaultClip = -1
@@ -30,17 +31,7 @@ SWEP.Secondary.Ammo = "none"
 SWEP.WalkSpeed = SPEED_NORMAL
 
 SWEP.NoMagazine = true
-SWEP.Undroppable = true
-SWEP.NoPickupNotification = true
 
 SWEP.HoldType = "slam"
 
 SWEP.NoDeploySpeedChange = true
-
-function SWEP:Initialize()
-	self:SetHoldType( "slam" )
-	self:SendWeaponAnim( ACT_GMOD_IN_CHAT )
-end
-function SWEP:Think()
-	self:SendWeaponAnim( ACT_GMOD_IN_CHAT)
-end

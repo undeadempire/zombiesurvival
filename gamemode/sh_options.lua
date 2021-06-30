@@ -296,7 +296,7 @@ GM:AddStartingItem("betty",				ITEMCAT_OTHER,			15,				"weapon_zs_proxymine")
 GM:AddStartingItem("corgasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_corgasgrenade")
 GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_crygasgrenade").SkillRequirement = SKILL_U_CRYGASGREN
 GM:AddStartingItem("detpck",			ITEMCAT_OTHER,			35,				"weapon_zs_detpack").Countables = "prop_detpack"
-GM:AddStartingItem("suicide",			ITEMCAT_OTHER,			35,				"weapon_zs_suicidebomb").Countables = "prop_detpack"
+GM:AddStartingItem("suicide",			ITEMCAT_OTHER,			35,				"weapon_zs_suicidebomb")
 item =
 --GM:AddStartingItem("sigfragment",		ITEMCAT_OTHER,			25,				"weapon_zs_sigilfragment")
 --item.NoClassicMode = true
