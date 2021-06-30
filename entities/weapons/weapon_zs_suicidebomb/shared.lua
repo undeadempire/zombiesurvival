@@ -20,6 +20,7 @@ SWEP.Primary.DefaultClip = -1
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "none"
 SWEP.Primary.Delay = 15
+SWEP.Primary.Gesture = ACT_SLAM_DETONATOR_DETONATE
 SWEP.Idle = 1
 SWEP.Undroppable = true
 

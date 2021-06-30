@@ -1,27 +1,25 @@
 INC_SERVER()
 
-SWEP.Primary.Gesture = ACT_SLAM_DETONATOR_DETONATE
-
 function SWEP:Initialize()
 	self:SetHoldType( "slam" )
-	self:SendWeaponAnim( ACT_SLAM_DETONATOR_IDLE )
+	self:SendWeaponAnim(ACT_SLAM_DETONATOR_IDLE)
 end
 
 if SERVER then
 
 function SWEP:Think()
-	self:SendWeaponAnim( ACT_SLAM_DETONATOR_IDLE )
+	self:SendWeaponAnim(ACT_SLAM_DETONATOR_IDLE)
 	self.Idle = 1
 end
 end
 
 function SWEP:PrimaryAttack()
 	self:SendWeaponAnim(ACT_SLAM_DETONATOR_DETONATE)
+	self.BaseClass.ShootEffects (self);
 	
 	if CLIENT then return end
 
-	timer.Simple(2, function()
-		self.BaseClass.ShootEffects (self);
+	timer.Simple(3, function()
 		explode = ents.Create ( "env_explosion" )
 		explode:SetPos( self.Owner:GetPos() )
 		explode:SetOwner( self.Owner )

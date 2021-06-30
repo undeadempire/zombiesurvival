@@ -10,7 +10,7 @@ function SWEP:PrimaryAttack()
 	
 	if CLIENT then return end
 
-	timer.Simple(2, function()
+	timer.Simple(3, function()
 		self.BaseClass.ShootEffects (self);
 		explode = ents.Create ( "env_explosion" )
 		explode:SetPos( self.Owner:GetPos() )
