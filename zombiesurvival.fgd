@@ -902,7 +902,7 @@
 @PointClass base(Weapon) studio("models/weapons/w_crowbar.mdl")                 = weapon_zs_crowbar            : "Instantly kills headcrabs." []
 @PointClass base(Weapon) studio("models/weapons/w_pist_deagle.mdl")             = weapon_zs_deagle             : "Ammo Type: Pistol.\nThis handgun uses high-powered rounds that have more knockback than others." []
 @PointClass base(Weapon) studio("models/weapons/w_c4_planted.mdl")              = weapon_zs_detpack            : "A pack of explosives that can be placed on surfaces and detonated remotely." []
-@PointClass base(Weapon) studio("models/weapons/w_c4_planted.mdl")              = weapon_zs_suicide            : "A pack of explosives that can be detonated killing yourself and zeds around you." []
+@PointClass base(Weapon) studio("models/weapons/w_c4_planted.mdl")              = weapon_zs_suicidebomb            : "A pack of explosives that can be detonated killing yourself and zeds around you." []
 @PointClass base(Weapon) studio("models/weapons/w_alyx_gun.mdl")                = weapon_zs_dominator          : "Ammo Type: Pulse.\nAn extremely powerful weapon from another place and time." []
 @PointClass base(Weapon) studio("models/combine_scanner.mdl")                   = weapon_zs_drone              : "A deployable, remotely controlled device. Ideal for scouting, retrieval and targeted attacks." []
 @PointClass base(Weapon) studio("models/weapons/w_hammer.mdl")                  = weapon_zs_electrohammer      : "Craftable Weapon.\nRecipe: Battery and Hammer " []
