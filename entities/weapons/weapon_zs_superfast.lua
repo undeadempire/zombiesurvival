@@ -12,31 +12,32 @@ if CLIENT then
 end
 
 SWEP.MeleeDelay = 0
-SWEP.MeleeReach = 50 -- 45
-SWEP.MeleeDamage = 10 -- 7
-SWEP.MeleeForceScale = 0.1
-SWEP.MeleeSize = 5.5 --4.5 -- 1.5
+SWEP.MeleeReach = 60 -- 45
+SWEP.MeleeDamage = 18 -- 7
+SWEP.MeleeForceScale = 0.15
+SWEP.MeleeSize = 7.5 --4.5 -- 1.5
 SWEP.MeleeDamageType = DMG_SLASH
-SWEP.Primary.Delay = 0.28 -- 0.32
+SWEP.Primary.Delay = 0.22 -- 0.32
 
-SWEP.SlowMeleeDelay = 0.6 -- 0.8
-SWEP.SlowMeleeDamage = 21 -- 18
+SWEP.SlowMeleeDelay = 0.2 -- 0.8
+SWEP.SlowMeleeDamage = 35 -- 18
 
-SWEP.PounceDamage = 30 -- 20
-SWEP.PounceDamageVsPlayerMul = 0.7 -- 0.4
+SWEP.PounceDamage = 45 -- 20
+SWEP.PounceDamageVsPlayerMul = 1.2 -- 0.4
 SWEP.PounceDamageType = DMG_IMPACT
-SWEP.PounceReach = 40 -- 36
-SWEP.PounceSize = 15 -- 12
-SWEP.PounceStartDelay = 0.3 -- 0.5
-SWEP.PounceDelay = 1 -- 1.25
-SWEP.PounceVelocity = 700
+SWEP.PounceReach = 45 -- 36
+SWEP.PounceSize = 20 -- 12
+SWEP.PounceStartDelay = 0.1 -- 0.5
+SWEP.PounceDelay = 0.5 -- 1.25
+SWEP.PounceVelocity = 850
 
-SWEP.RoarTime = 1.5 -- 1.6
+SWEP.RoarTime = 1.1 -- 1.6
 
 SWEP.Secondary.Automatic = false
 
 SWEP.NextClimbSound = 0
 SWEP.NextAllowPounce = 0
+
 function SWEP:Think()
 	BaseClass.Think(self)
 
@@ -265,6 +266,7 @@ function SWEP:MeleeHitEntity(ent, trace, damage, forcescale)
 end
 
 local climblerp = 0
+
 function SWEP:GetViewModelPosition(pos, ang)
 	climblerp = math.Approach(climblerp, self:IsClimbing() and not self:IsSwinging() and 1 or 0, FrameTime() * ((climblerp + 1) ^ 3))
 	ang:RotateAroundAxis(ang:Right(), 64 * climblerp)
@@ -325,6 +327,7 @@ function SWEP:PlaySlowSwingSound()
 end
 
 local climbtrace = {mask = MASK_SOLID_BRUSHONLY, mins = Vector(-5, -5, -5), maxs = Vector(5, 5, 5)}
+
 function SWEP:GetClimbSurface()
 	local owner = self:GetOwner()
 
@@ -482,6 +485,7 @@ SWEP.CheckAttackAnimation = SWEP.CheckIdleAnimation]]
 
 function SWEP:CheckMoaning()
 end
+
 SWEP.StartMoaning = SWEP.CheckMoaning
 SWEP.StopMoaning = SWEP.CheckMoaning
 SWEP.StartMoaningSound = SWEP.CheckMoaning
