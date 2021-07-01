@@ -445,8 +445,63 @@ function SWEP:StopPounce()
 	self:GetOwner():ResetJumpPower()
 end
 
+local PoisonPattern = {
+	{-0.66, 0},
+	{-0.33, 0},
+	{0, 0},
+	{0, 1},
+	{0, -1},
+	{0.33, 0},
+	{0.66, 0},
+}
+
+local function DoFleshThrow(owner, self)
+	local startpos = owner:GetShootPos()
+	local aimang = owner:EyeAngles()
+	local ang
+
+	for k, spr in pairs(PoisonPattern) do
+		if k == "BaseClass" then continue end
+
+		ang = Angle(aimang.p, aimang.y, aimang.r)
+		ang:RotateAroundAxis(ang:Up(), spr[1] * 12.5)
+		ang:RotateAroundAxis(ang:Right(), spr[2] * 5)
+		local heading = ang:Forward()
+
+		local ent = ents.Create(k % 3 == 1 and "projectile_ghoulfleshno" or "projectile_poisonflesh")
+		if ent:IsValid() then
+			ent:SetPos(startpos + heading * 8)
+			ent:SetOwner(owner)
+			ent:Spawn()
+
+			local phys = ent:GetPhysicsObject()
+			if phys:IsValid() then
+				phys:SetVelocityInstantaneous(heading * 400)
+			end
+		end
+	end
+
+	owner:EmitSound(string.format("physics/body/body_medium_break%d.wav", math.random(2, 4)), 72, math.Rand(105, 115))
+end
+
+
 function SWEP:Reload()
-	BaseClass.SecondaryAttack(self)
+
+	local owner = self:GetOwner()
+	if CurTime() < self:GetNextPrimaryFire() or CurTime() < self:GetNextSecondaryFire() or IsValid(owner.FeignDeath) then return end
+
+	self:SetNextSecondaryFire(CurTime() + 3)
+	self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)
+
+	self:GetOwner():DoZombieEvent()
+	self:EmitSound("npc/fast_zombie/leap1.wav", 74, math.Rand(110, 130))
+	self:EmitSound(string.format("physics/body/body_medium_break%d.wav", math.random(2, 4)), 72, math.Rand(85, 95))
+	self:SendWeaponAnim(ACT_VM_HITCENTER)
+	self.IdleAnimation = CurTime() + self:SequenceDuration()
+
+	if SERVER then
+		timer.Simple(0.7, function() DoFleshThrow(owner, self) end)
+	end
 end
 
 function SWEP:OnRemove()
