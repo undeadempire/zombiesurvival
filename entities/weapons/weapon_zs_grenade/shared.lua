@@ -4,3 +4,4 @@ SWEP.Description = "A simple fragmentation grenade.\nWhen used in the right cond
 SWEP.Base = "weapon_zs_basethrown"
 
 
+SWEP.MaxStock = 15
