@@ -117,8 +117,8 @@ GM.ArsenalCrateCommission = 0.15
 
 GM.BaseDeploySpeed = 1 -- Put this back to 1 to increase the value of it
 
-GM.ExtraHealthPerExtraNail = 50
-GM.MaxNails = 4
+GM.ExtraHealthPerExtraNail = 75
+GM.MaxNails = 4.0
 
 -- Moved from options to globals because the game is now balanced around it being static. The gamemode will BREAK if this is not 6!!
 GM.NumberOfWaves = 6
@@ -155,9 +155,9 @@ ZE_KNOCKBACKSCALE = 0.1
 MASK_HOVER = bit.bor(CONTENTS_SOLID, CONTENTS_WATER, CONTENTS_SLIME, CONTENTS_GRATE, CONTENTS_WINDOW, CONTENTS_HITBOX)
 
 GM.BarricadeHealthMin = 200
-GM.BarricadeHealthMax = 110000 * 0.85
-GM.BarricadeHealthMassFactor = 3 * 1.0
-GM.BarricadeHealthVolumeFactor = 4 * 1.0
+GM.BarricadeHealthMax = 4000
+GM.BarricadeHealthMassFactor = 2 * 1.0
+GM.BarricadeHealthVolumeFactor = 4 * 1.5
 GM.BarricadeRepairCapacity = 1.25
 
 GM.BossZombiePlayersRequired = 8
