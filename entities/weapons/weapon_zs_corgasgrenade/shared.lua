@@ -8,3 +8,4 @@ SWEP.ShowWorldModel = false
 
 SWEP.Primary.Ammo = "corgasgrenade"
 
+SWEP.MaxStock = 15

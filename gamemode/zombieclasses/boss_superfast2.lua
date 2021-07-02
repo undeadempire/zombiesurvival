@@ -7,8 +7,8 @@ CLASS.Boss = true
 
 CLASS.KnockbackScale = 0
 
-CLASS.Health = 1800 --2000
-CLASS.Speed = 270 -- 250
+CLASS.Health = 2200 --1800
+CLASS.Speed = 275 -- 250
 
 CLASS.CanTaunt = true
 
@@ -58,6 +58,7 @@ local StepSounds = {
 	"npc/zombie/foot2.wav",
 	"npc/zombie/foot3.wav"
 }
+
 function CLASS:PlayerFootstep(pl, vFootPos, iFoot, strSoundName, fVolume, pFilter)
 	pl:EmitSound(StepSounds[math_random(#StepSounds)], 70)
 
@@ -199,12 +200,14 @@ local MuscularBones = {
 	["ValveBiped.Bip01_L_Foot"] = Vector(1, 2, 3),
 	["ValveBiped.Bip01_R_Foot"] = Vector(1, 2, 3),
 }
+
 local render_SetMaterial = render.SetMaterial
 local render_DrawSprite = render.DrawSprite
 local angle_zero = angle_zero
 local LocalToWorld = LocalToWorld
 
 local matFlesh = Material("models/zombie_poison/poisonzombie_sheet.vtf")
+
 function CLASS:PrePlayerDraw(pl)
 	render.ModelMaterialOverride(matFlesh)
 	render.SetColorModulation(0.45, 0.35, 0.05)
@@ -244,4 +247,5 @@ end
 function CLASS:PostPlayerDrawOverrideModel(pl)
 	render.ModelMaterialOverride(nil)
 end
+
 -- Thanks to Dessert for his help - Soltane

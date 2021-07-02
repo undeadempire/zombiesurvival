@@ -12,3 +12,5 @@ SWEP.Primary.Sound = Sound("weapons/pinpull.wav")
 function SWEP:Precache()
 	util.PrecacheSound("weapons/pinpull.wav")
 end
+
+SWEP.MaxStock = 15

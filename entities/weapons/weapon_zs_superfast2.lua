@@ -12,31 +12,32 @@ if CLIENT then
 end
 
 SWEP.MeleeDelay = 0.1
-SWEP.MeleeReach = 40 -- 45
-SWEP.MeleeDamage = 8 -- 7
+SWEP.MeleeReach = 55 -- 45
+SWEP.MeleeDamage = 14 -- 7
 SWEP.MeleeForceScale = 0.1
-SWEP.MeleeSize = 4.5 --4.5 -- 1.5
+SWEP.MeleeSize = 6.5 --4.5 -- 1.5
 SWEP.MeleeDamageType = DMG_SLASH
-SWEP.Primary.Delay = 0.30 -- 0.32
+SWEP.Primary.Delay = 0.20 -- 0.32
 
-SWEP.SlowMeleeDelay = 0.5 -- 0.8
-SWEP.SlowMeleeDamage = 20 -- 18
+SWEP.SlowMeleeDelay = 0.3 -- 0.8
+SWEP.SlowMeleeDamage = 30 -- 18
 
-SWEP.PounceDamage = 25 -- 20
-SWEP.PounceDamageVsPlayerMul = 0.8 -- 0.4
+SWEP.PounceDamage = 40 -- 20
+SWEP.PounceDamageVsPlayerMul = 1 -- 0.4
 SWEP.PounceDamageType = DMG_IMPACT
-SWEP.PounceReach = 35 -- 36
-SWEP.PounceSize = 14 -- 12
-SWEP.PounceStartDelay = 0.4 -- 0.5
-SWEP.PounceDelay = 1 -- 1.25
-SWEP.PounceVelocity = 600
+SWEP.PounceReach = 40 -- 32
+SWEP.PounceSize = 15 -- 12
+SWEP.PounceStartDelay = 0.25 -- 0.5
+SWEP.PounceDelay = 0.8 -- 1.25
+SWEP.PounceVelocity = 750
 
-SWEP.RoarTime = 1 -- 1.6
+SWEP.RoarTime = 1.3 -- 1.6
 
 SWEP.Secondary.Automatic = false
 
 SWEP.NextClimbSound = 0
 SWEP.NextAllowPounce = 0
+
 function SWEP:Think()
 	BaseClass.Think(self)
 
@@ -265,6 +266,7 @@ function SWEP:MeleeHitEntity(ent, trace, damage, forcescale)
 end
 
 local climblerp = 0
+
 function SWEP:GetViewModelPosition(pos, ang)
 	climblerp = math.Approach(climblerp, self:IsClimbing() and not self:IsSwinging() and 1 or 0, FrameTime() * ((climblerp + 1) ^ 3))
 	ang:RotateAroundAxis(ang:Right(), 64 * climblerp)
@@ -325,6 +327,7 @@ function SWEP:PlaySlowSwingSound()
 end
 
 local climbtrace = {mask = MASK_SOLID_BRUSHONLY, mins = Vector(-5, -5, -5), maxs = Vector(5, 5, 5)}
+
 function SWEP:GetClimbSurface()
 	local owner = self:GetOwner()
 
@@ -442,8 +445,63 @@ function SWEP:StopPounce()
 	self:GetOwner():ResetJumpPower()
 end
 
+local PoisonPattern = {
+	{-0.66, 0},
+	{-0.33, 0},
+	{0, 0},
+	{0, 1},
+	{0, -1},
+	{0.33, 0},
+	{0.66, 0},
+}
+
+local function DoFleshThrow(owner, self)
+	local startpos = owner:GetShootPos()
+	local aimang = owner:EyeAngles()
+	local ang
+
+	for k, spr in pairs(PoisonPattern) do
+		if k == "BaseClass" then continue end
+
+		ang = Angle(aimang.p, aimang.y, aimang.r)
+		ang:RotateAroundAxis(ang:Up(), spr[1] * 12.5)
+		ang:RotateAroundAxis(ang:Right(), spr[2] * 5)
+		local heading = ang:Forward()
+
+		local ent = ents.Create(k % 3 == 1 and "projectile_ghoulfleshno" or "projectile_poisonflesh")
+		if ent:IsValid() then
+			ent:SetPos(startpos + heading * 8)
+			ent:SetOwner(owner)
+			ent:Spawn()
+
+			local phys = ent:GetPhysicsObject()
+			if phys:IsValid() then
+				phys:SetVelocityInstantaneous(heading * 400)
+			end
+		end
+	end
+
+	owner:EmitSound(string.format("physics/body/body_medium_break%d.wav", math.random(2, 4)), 72, math.Rand(105, 115))
+end
+
+
 function SWEP:Reload()
-	BaseClass.SecondaryAttack(self)
+
+	local owner = self:GetOwner()
+	if CurTime() < self:GetNextPrimaryFire() or CurTime() < self:GetNextSecondaryFire() or IsValid(owner.FeignDeath) then return end
+
+	self:SetNextSecondaryFire(CurTime() + 3)
+	self:SetNextPrimaryFire(CurTime() + self.Primary.Delay)
+
+	self:GetOwner():DoZombieEvent()
+	self:EmitSound("npc/fast_zombie/leap1.wav", 74, math.Rand(110, 130))
+	self:EmitSound(string.format("physics/body/body_medium_break%d.wav", math.random(2, 4)), 72, math.Rand(85, 95))
+	self:SendWeaponAnim(ACT_VM_HITCENTER)
+	self.IdleAnimation = CurTime() + self:SequenceDuration()
+
+	if SERVER then
+		timer.Simple(0.7, function() DoFleshThrow(owner, self) end)
+	end
 end
 
 function SWEP:OnRemove()
@@ -482,6 +540,7 @@ SWEP.CheckAttackAnimation = SWEP.CheckIdleAnimation]]
 
 function SWEP:CheckMoaning()
 end
+
 SWEP.StartMoaning = SWEP.CheckMoaning
 SWEP.StopMoaning = SWEP.CheckMoaning
 SWEP.StartMoaningSound = SWEP.CheckMoaning
