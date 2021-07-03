@@ -2097,7 +2097,7 @@ function GM:EndRound(winner, nextmap)
 		timer.Simple(0.5, function() surface_PlaySound(snd) end)
 	end
 
-	timer.Simple(5, function()
+	timer.Simple(10, function()
 		if not (pEndBoard and pEndBoard:IsValid()) then
 			MakepEndBoard(winner)
 		end
