@@ -713,23 +713,10 @@ GM.RestrictedModels = {
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
-	"models/captainbigbutt/vocaloid/miku_append.mdl",
-	"models/hellinspector/gru/gru_pm.mdl",
-	"models/halo3/arbiter.mdl",
-	"models/mcmarkviarmor.mdl",
-	"models/player/buffpyro.mdl",
-	"models/player/clone/rex.mdl",
-	"models/johnnycage/mk_cage.mdl",
-	"models/player/obiwan/obiwan_est.mdl",
-	"models/bread/bo2_sealscp_masked.mdl",
-	"models/bread/bo2_sealscp.mdl",
-	"models/player/jesus/jesus.mdl",
-	"models/lskovfoged/dmc4/dante/dante.mdl",
-	"models/papyrusplayer/papyrusplayer.mdl",
-	"models/player/dvl.mdl",
-	"models/grealms/characters/nicookkar/nicookkar.mdl",
-	"models/player/moonmankkk.mdl",
-	"models/player_solaire.mdl",
+	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
+	"models/player/legoyobama.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
