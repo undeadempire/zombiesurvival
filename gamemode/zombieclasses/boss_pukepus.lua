@@ -14,7 +14,7 @@ CLASS.SWEP = "weapon_zs_pukepus"
 
 CLASS.Model = Model("models/Zombie/Poison.mdl")
 
-CLASS.Speed = 155 --120
+CLASS.Speed = 150 --120
 CLASS.Points = 40
 
 CLASS.PainSounds = {"NPC_PoisonZombie.Pain"}

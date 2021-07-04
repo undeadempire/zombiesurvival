@@ -296,7 +296,7 @@ function ENT:FireTurret(src, dir)
 			self:SetAmmo(curammo - 1)
 
 			owner:LagCompensation(true)
-			self:FireBulletsLua(src, dir, 1, 1, self.PrimaryDamage, owner, nil, "AR2Tracer", self.BulletCallback, nil, nil, self.GunRange, nil, self)
+			self:FireBulletsLua(src, dir, 1, 1, 18, owner, nil, "AR2Tracer", self.BulletCallback, nil, nil, self.GunRange, nil, self)
 			owner:LagCompensation(false)
 		else
 			self:SetNextFire(CurTime() + 2)

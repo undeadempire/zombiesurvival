@@ -22,7 +22,7 @@ CLASS.Points = 40
 CLASS.SWEP = "weapon_zs_stalker"
 
 CLASS.Health = 1500
-CLASS.Speed = 270
+CLASS.Speed = 240
 
 CLASS.VoicePitch = 0.65
 

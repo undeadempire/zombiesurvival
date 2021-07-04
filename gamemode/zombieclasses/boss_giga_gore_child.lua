@@ -8,7 +8,7 @@ CLASS.Boss = true
 CLASS.KnockbackScale = 0
 
 CLASS.Health = 2000
-CLASS.Speed = 230
+CLASS.Speed = 220
 
 CLASS.Points = 40
 
