@@ -936,6 +936,21 @@ end
 function GM:SendZombieVolunteers(pl, nonemptyonly)
 	if nonemptyonly and #self.ZombieVolunteers == 0 then return end
 
+	if (string.find(game.GetMap(),"zs_somewhere")) then
+		net.Start("zs_zvols")
+		net.WriteUInt(#self.ZombieVolunteers, 1)
+		for _, p in ipairs(self.ZombieVolunteers) do
+			net.WriteEntity(p)
+		end
+
+	if pl then
+		net.Send(pl)
+	else
+		net.Broadcast()
+	end
+
+else
+
 	net.Start("zs_zvols")
 		net.WriteUInt(#self.ZombieVolunteers, 8)
 		for _, p in ipairs(self.ZombieVolunteers) do
@@ -946,6 +961,7 @@ function GM:SendZombieVolunteers(pl, nonemptyonly)
 	else
 		net.Broadcast()
 	end
+end
 end
 
 function GM:ZombieSpawnDistanceSort(other)
