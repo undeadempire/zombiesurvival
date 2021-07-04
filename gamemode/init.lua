@@ -1454,6 +1454,7 @@ end
 
 function GM:DoHonorableMentions(filter)
 	self:CacheHonorableMentions()
+	timer.Simple(10, function()
 
 	for i, tab in pairs(self.CachedHMs) do
 		net.Start("zs_honmention")
@@ -1466,6 +1467,7 @@ function GM:DoHonorableMentions(filter)
 			net.Broadcast()
 		end
 	end
+end)
 end
 
 function GM:PostDoHonorableMentions()
