@@ -9,13 +9,7 @@ CLASS.Model = Model("models/player/zombie_fast.mdl")
 
 CLASS.Wave = 3 / 6
 
-if GM.CurrentWave == 1 then
-	CLASS.Infliction = 0.8 -- 80% on wave 1
-elseif GM.CurrentWave == 2 then
-	CLASS.Infliction = 0.7 -- 70% on wave 2
-else
-	CLASS.Infliction = 0.5 -- 50% on wave 3
-end
+CLASS.Infliction = 0.65 -- 65% of players dead
 
 CLASS.Revives = true
 
