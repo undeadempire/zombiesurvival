@@ -451,7 +451,7 @@ GM:AddPointShopItem("nail",				ITEMCAT_AMMO,			1,				nil,							"Nail",							"I
 item.IsNail = true
 
 item = 
-GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			10,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
+GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			5,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
 item.NoScrapCraft = true
 item.IsNail = true
 
@@ -714,23 +714,24 @@ GM.RestrictedModels = {
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
+
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
 	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
 	"models/player/legoyobama.mdl",
 	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
 	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl",
 	"models/player/tfa_ow_mercy.mdl",
-	"models/kory/re8/lady_dimitrescu.mdl",
 	"models/player/hellinspector/wallace/wallace.mdl",
 	"models/player/lordvipes/h3_spartans_mps",
-	"models/player/northern3d/theglobglogabgalab.mdl"
+	"models/player/northern3d/theglobglogabgalab.mdl",
+	"models/player/fwhykay/bloodrayne_2/rayne/rayne_dress_pm.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
 GM.RandomPlayerModels = {}
 for name, mdl in pairs(player_manager.AllValidModels()) do
 	if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
-		table.insert(GM.RandomPlayerModels, name)
+		table.insert("models/player/kleiner.mdl", name)
 	end
 end
 

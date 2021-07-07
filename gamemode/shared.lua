@@ -817,12 +817,52 @@ end
 function GM:IsSpecialPerson(pl, image)
 	local img, tooltip
 
-	if pl:SteamID() == "STEAM_0:1:3307510" then
-		img = "VGUI/steam/games/icon_sourcesdk"
-		tooltip = "JetBoom\nCreator of Zombie Survival!"
+	if pl:SteamID() == "STEAM_0:1:215171667" then
+		img = "materials/atlaschat/emoticons/sofunny.png"
+		tooltip = "EasyNature/Owner of Undead Empire!"
 	elseif pl:IsAdmin() then
-		img = "VGUI/servers/icon_robotron"
-		tooltip = "Admin"
+		img = "materials/atlaschat/emoticons/sofunny.png"
+		tooltip = "EasyNature/Owner of Undead Empire!"
+	elseif pl:IsNoxSupporter() then
+		img = "noxiousnet/noxicon.png"
+		tooltip = "Nox Supporter"
+	end
+
+	if img then
+		if CLIENT then
+			image:SetImage(img)
+			image:SetTooltip(tooltip)
+		end
+
+		return true
+	end
+
+	if pl:SteamID() == "STEAM_0:0:25649134" then
+		img = "materials/atlaschat/emoticons/gachigasm.png"
+		tooltip = "Soltane/Developer of Undead Empire!"
+	elseif pl:IsAdmin() then
+		img = "materials/atlaschat/emoticons/gachigasm.png"
+		tooltip = "Soltane/Developer of Undead Empire!"
+	elseif pl:IsNoxSupporter() then
+		img = "noxiousnet/noxicon.png"
+		tooltip = "Nox Supporter"
+	end
+
+	if img then
+		if CLIENT then
+			image:SetImage(img)
+			image:SetTooltip(tooltip)
+		end
+
+		return true
+	end
+
+	if pl:SteamID() == "STEAM_0:0:91225678" then
+		img = "materials/atlaschat/emoticons/pepega.png"
+		tooltip = "DessertOverlord/Head Developer of Undead Empire!"
+	elseif pl:IsAdmin() then
+		img = "materials/atlaschat/emoticons/pepega.png"
+		tooltip = "DessertOverlord/Head Developer of Undead Empire!"
 	elseif pl:IsNoxSupporter() then
 		img = "noxiousnet/noxicon.png"
 		tooltip = "Nox Supporter"

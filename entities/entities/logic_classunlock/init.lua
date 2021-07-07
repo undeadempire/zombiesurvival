@@ -66,6 +66,15 @@ function ENT:AcceptInput(name, activator, caller, args)
 	end
 end
 
+-- if (string.find(game.GetMap(),"zs_somewhere")) then
+	hook.Add("SetWaveActive", "somewhereeventmanager", function()
+		
+		dostuff()
+			chosenplayer = (pick a RANDOM player)
+				zs_changeclass(boss_superfast)
+	end
+	if not firstrun then return end
+
 function ENT:KeyValue(key, value)
 	key = string.lower(key)
 	if key == "class" then
