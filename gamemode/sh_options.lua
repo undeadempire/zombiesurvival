@@ -714,6 +714,7 @@ GM.RestrictedModels = {
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
+
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
 	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
 	"models/player/legoyobama.mdl",
