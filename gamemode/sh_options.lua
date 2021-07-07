@@ -296,6 +296,7 @@ GM:AddStartingItem("betty",				ITEMCAT_OTHER,			15,				"weapon_zs_proxymine")
 GM:AddStartingItem("corgasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_corgasgrenade")
 GM:AddStartingItem("crygasgrenade",		ITEMCAT_OTHER,			15,				"weapon_zs_crygasgrenade").SkillRequirement = SKILL_U_CRYGASGREN
 GM:AddStartingItem("detpck",			ITEMCAT_OTHER,			35,				"weapon_zs_detpack").Countables = "prop_detpack"
+GM:AddStartingItem("suicidebomb",			ITEMCAT_OTHER,			35,				"weapon_zs_suicidebomb")
 item =
 --GM:AddStartingItem("sigfragment",		ITEMCAT_OTHER,			25,				"weapon_zs_sigilfragment")
 --item.NoClassicMode = true
@@ -652,6 +653,7 @@ GM:AddPointShopItem("molotov",			ITEMCAT_OTHER,			30,				"weapon_zs_molotov")
 GM:AddPointShopItem("grenade",			ITEMCAT_OTHER,			35,				"weapon_zs_grenade")
 GM:AddPointShopItem("betty",			ITEMCAT_OTHER,			35,				"weapon_zs_proxymine")
 GM:AddPointShopItem("detpck",			ITEMCAT_OTHER,			40,				"weapon_zs_detpack")
+GM:AddPointShopItem("suicidebomb",			ITEMCAT_OTHER,			45,				"weapon_zs_suicidebomb")
 item =
 GM:AddPointShopItem("crygasgrenade",	ITEMCAT_OTHER,			40,				"weapon_zs_crygasgrenade")
 item.SkillRequirement = SKILL_U_CRYGASGREN
@@ -713,23 +715,15 @@ GM.RestrictedModels = {
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
-	"models/captainbigbutt/vocaloid/miku_append.mdl",
-	"models/hellinspector/gru/gru_pm.mdl",
-	"models/halo3/arbiter.mdl",
-	"models/mcmarkviarmor.mdl",
-	"models/player/buffpyro.mdl",
-	"models/player/clone/rex.mdl",
-	"models/johnnycage/mk_cage.mdl",
-	"models/player/obiwan/obiwan_est.mdl",
-	"models/bread/bo2_sealscp_masked.mdl",
-	"models/bread/bo2_sealscp.mdl",
-	"models/player/jesus/jesus.mdl",
-	"models/lskovfoged/dmc4/dante/dante.mdl",
-	"models/papyrusplayer/papyrusplayer.mdl",
-	"models/player/dvl.mdl",
-	"models/grealms/characters/nicookkar/nicookkar.mdl",
-	"models/player/moonmankkk.mdl",
-	"models/player_solaire.mdl",
+	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
+	"models/player/legoyobama.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl",
+	"models/player/tfa_ow_mercy.mdl",
+	"models/kory/re8/lady_dimitrescu.mdl",
+	"models/player/hellinspector/wallace/wallace.mdl",
+	"models/player/lordvipes/h3_spartans_mps",
+	"models/player/northern3d/theglobglogabgalab.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
@@ -826,7 +820,7 @@ GM.NoSuicideWave = 1
 GM.WaveZeroLength = 180
 
 -- Time humans have between waves to do stuff without NEW zombies spawning. Any dead zombies will be in spectator (crow) view and any living ones will still be living.
-GM.WaveIntermissionLength = 60
+GM.WaveIntermissionLength = 70
 
 -- Time in seconds between end round and next map.
 GM.EndGameTime = 65

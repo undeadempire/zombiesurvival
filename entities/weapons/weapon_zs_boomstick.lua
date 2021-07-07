@@ -33,7 +33,7 @@ SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "buckshot"
 SWEP.Primary.DefaultClip = 28
 
-SWEP.ConeMax = 11.5
+SWEP.ConeMax = 13
 SWEP.ConeMin = 10
 
 SWEP.Tier = 5
@@ -47,14 +47,14 @@ SWEP.PumpActivity = ACT_SHOTGUN_PUMP
 SWEP.PumpSound = Sound("Weapon_Shotgun.Special1")
 SWEP.ReloadSound = Sound("Weapon_Shotgun.Reload")
 
-GAMEMODE:SetPrimaryWeaponModifier(SWEP, WEAPON_MODIFIER_RELOAD_SPEED, 0.07)
+GAMEMODE:SetPrimaryWeaponModifier(SWEP, WEAPON_MODIFIER_RELOAD_SPEED, 0.06)
 GAMEMODE:AttachWeaponModifier(SWEP, WEAPON_MODIFIER_CLIP_SIZE, 1)
-GAMEMODE:AddNewRemantleBranch(SWEP, 1, "Lithe Stick", "Decreased damage but faster reload, more knockback and more move speed", function(wept)
+GAMEMODE:AddNewRemantleBranch(SWEP, 1, "Lithe Stick", "Decreased damage but faster reload, and more knockback", function(wept)
 	wept.Primary.Damage = wept.Primary.Damage * 0.65
-	wept.ReloadSpeed = wept.ReloadSpeed * 1.20
+	wept.ReloadSpeed = wept.ReloadSpeed * 1.1
 	wept.Primary.Delay = wept.Primary.Delay * 0.6
 	wept.Knockback = 100
-	wept.WalkSpeed = SPEED_SLOW
+	wept.WalkSpeed = SPEED_SLOWER
 end)
 local branch = GAMEMODE:AddNewRemantleBranch(SWEP, 2, "Doom Stick", "More bullets per shot and colossal knockback, but very long reload and slower move speed", function(wept)
 	wept.Primary.NumShots = 10

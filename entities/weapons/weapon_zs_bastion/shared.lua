@@ -1,5 +1,5 @@
 SWEP.PrintName = "'Bastion' Particle Generator"
-SWEP.Description = "Fires stationary particles of light that spews energy at an angle."
+SWEP.Description = "Fires stationary particles of light that spew energy at an angle."
 
 SWEP.Base = "weapon_zs_baseproj"
 
@@ -14,8 +14,8 @@ SWEP.CSMuzzleFlashes = false
 SWEP.Primary.ClipSize = 1
 SWEP.Primary.Automatic = true
 SWEP.Primary.Ammo = "impactmine"
-SWEP.Primary.Delay = 15
-SWEP.Primary.DefaultClip = 20
+SWEP.Primary.Delay = 30
+SWEP.Primary.DefaultClip = 10
 SWEP.Primary.Damage = 26
 SWEP.Primary.NumShots = 1
 
