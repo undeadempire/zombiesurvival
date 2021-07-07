@@ -1,7 +1,7 @@
 CLASS.Disabled = true
 
 if (string.find(game.GetMap(),"zs_somewhere")) then
-		CLASS.Disabled = false*
+		CLASS.Disabled = false
 end
 
 CLASS.Name = "Imperator Vult"
