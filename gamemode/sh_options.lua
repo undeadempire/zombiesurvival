@@ -721,10 +721,10 @@ GM.RestrictedModels = {
 	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
 	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl",
 	"models/player/tfa_ow_mercy.mdl",
-	"models/kory/re8/lady_dimitrescu.mdl",
 	"models/player/hellinspector/wallace/wallace.mdl",
 	"models/player/lordvipes/h3_spartans_mps",
-	"models/player/northern3d/theglobglogabgalab.mdl"
+	"models/player/northern3d/theglobglogabgalab.mdl",
+	"models/player/fwhykay/bloodrayne_2/rayne/rayne_dress_pm.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
