@@ -4,7 +4,7 @@ SWEP.Base = "weapon_zs_zombie"
 
 SWEP.PrintName = "Agile Dead"
 
-SWEP.MeleeDamage = 10
+SWEP.MeleeDamage = 20
 SWEP.Primary.Delay = 1.2
 SWEP.MeleeDamageVsProps = 18
 

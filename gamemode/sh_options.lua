@@ -451,7 +451,7 @@ GM:AddPointShopItem("nail",				ITEMCAT_AMMO,			1,				nil,							"Nail",							"I
 item.IsNail = true
 
 item = 
-GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			10,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
+GM:AddPointShopItem("nail5x",			ITEMCAT_AMMO,			5,				nil,							"5 Nails",						"It's just 5 nails.",					"ammo_nail",						function(pl) pl:GiveAmmo(5, "GaussEnergy", true) end)
 item.NoScrapCraft = true
 item.IsNail = true
 
@@ -714,31 +714,24 @@ GM.RestrictedModels = {
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
+
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
-	"models/captainbigbutt/vocaloid/miku_append.mdl",
-	"models/hellinspector/gru/gru_pm.mdl",
-	"models/halo3/arbiter.mdl",
-	"models/mcmarkviarmor.mdl",
-	"models/player/buffpyro.mdl",
-	"models/player/clone/rex.mdl",
-	"models/johnnycage/mk_cage.mdl",
-	"models/player/obiwan/obiwan_est.mdl",
-	"models/bread/bo2_sealscp_masked.mdl",
-	"models/bread/bo2_sealscp.mdl",
-	"models/player/jesus/jesus.mdl",
-	"models/lskovfoged/dmc4/dante/dante.mdl",
-	"models/papyrusplayer/papyrusplayer.mdl",
-	"models/player/dvl.mdl",
-	"models/grealms/characters/nicookkar/nicookkar.mdl",
-	"models/player/moonmankkk.mdl",
-	"models/player_solaire.mdl",
+	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
+	"models/player/legoyobama.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append.mdl",
+	"models/captainbigbutt/vocaloid/shadow_miku_append_competitive.mdl",
+	"models/player/tfa_ow_mercy.mdl",
+	"models/player/hellinspector/wallace/wallace.mdl",
+	"models/player/lordvipes/h3_spartans_mps",
+	"models/player/northern3d/theglobglogabgalab.mdl",
+	"models/player/fwhykay/bloodrayne_2/rayne/rayne_dress_pm.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
 GM.RandomPlayerModels = {}
 for name, mdl in pairs(player_manager.AllValidModels()) do
 	if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
-		table.insert(GM.RandomPlayerModels, name)
+		table.insert("models/player/kleiner.mdl", name)
 	end
 end
 
