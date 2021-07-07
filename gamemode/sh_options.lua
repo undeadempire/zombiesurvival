@@ -726,16 +726,16 @@ GM.RestrictedModels = {
 	"models/player/northern3d/theglobglogabgalab.mdl",
 	"models/player/fwhykay/bloodrayne_2/rayne/rayne_dress_pm.mdl",
 	"models/player/fwhykay/bloodrayne_2/rayne/rayne_pm.mdl",
-	"models/player/fwhykay/bloodrayne_1/rayne/rayne_pm.mdl",
+	"models/player/fwhykay/bloodrayne_1/rayne/rayne_pm.mdl"
 }
 
 -- If a person has no player model then use one of these (auto-generated).
-GM.RandomPlayerModels = {}
-for name, mdl in pairs(player_manager.AllValidModels()) do
-	if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
-		table.insert("models/player/kleiner.mdl", name)
-	end
+GM.RandomPlayerModels = {"models/player/kleiner.mdl"}
+--[[for name, mdl in pairs(player_manager.AllValidModels()) do
+if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
+	table.insert("models/player/kleiner.mdl", name)
 end
+end]]
 
 GM.DeployableInfo = {}
 function GM:AddDeployableInfo(class, name, wepclass)
