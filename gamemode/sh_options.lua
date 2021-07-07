@@ -714,6 +714,7 @@ GM.RestrictedModels = {
 	"models/player/fatty/fatty.mdl",
 	"models/player/zombie_lacerator2.mdl",
 -- Pointshop
+
 	"models/captainbigbutt/vocaloid/miku_carbon.mdl",
 	"models/kerosenn/ghostrunner/gr74/playermodel/jack.mdl",
 	"models/player/legoyobama.mdl",
@@ -732,7 +733,7 @@ GM.RestrictedModels = {
 GM.RandomPlayerModels = {}
 for name, mdl in pairs(player_manager.AllValidModels()) do
 	if not table.HasValue(GM.RestrictedModels, string.lower(mdl)) then
-		table.insert(GM.RandomPlayerModels, name)
+		table.insert("models/player/kleiner.mdl", name)
 	end
 end
 
