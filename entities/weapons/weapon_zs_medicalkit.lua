@@ -19,7 +19,7 @@ SWEP.WorldModel = "models/weapons/w_medkit.mdl"
 SWEP.ViewModel = "models/weapons/c_medkit.mdl"
 SWEP.UseHands = true
 
-SWEP.Heal = 22
+SWEP.Heal = 15
 SWEP.Primary.Delay = 15
 
 SWEP.Primary.ClipSize = 30

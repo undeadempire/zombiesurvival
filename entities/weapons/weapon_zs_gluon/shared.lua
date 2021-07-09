@@ -11,11 +11,11 @@ SWEP.ShowViewModel = false
 SWEP.ShowWorldModel = false
 SWEP.UseHands = true
 
-SWEP.Primary.Damage = 13.25
+SWEP.Primary.Damage = 12
 SWEP.Primary.NumShots = 1
 SWEP.Primary.Delay = 0.09
 SWEP.Primary.KnockbackScale = 0.1
-SWEP.Primary.MaxDistance = 764
+SWEP.Primary.MaxDistance = 680
 
 SWEP.Primary.ClipSize = 30
 SWEP.Primary.Automatic = true
@@ -26,8 +26,8 @@ SWEP.ConeMax = 0
 SWEP.ConeMin = 0
 
 SWEP.Tier = 4
-SWEP.MaxStock = 3
-SWEP.Pierces = 8
+SWEP.MaxStock = 1
+SWEP.Pierces = 2
 
 SWEP.HeatBuildShort = 0.10
 SWEP.HeatBuildLong = 0.045
