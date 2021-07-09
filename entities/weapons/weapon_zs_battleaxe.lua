@@ -26,9 +26,9 @@ SWEP.UseHands = true
 SWEP.Primary.Sound = Sound("Weapon_USP.Single")
 SWEP.Primary.Damage = 24
 SWEP.Primary.NumShots = 1
-SWEP.Primary.Delay = 0.2
+SWEP.Primary.Delay = 0.15
 
-SWEP.Primary.ClipSize = 16
+SWEP.Primary.ClipSize = 12
 SWEP.Primary.Automatic = false
 SWEP.Primary.Ammo = "pistol"
 GAMEMODE:SetupDefaultClip(SWEP.Primary)
