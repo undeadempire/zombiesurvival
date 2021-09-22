@@ -1,3 +1,7 @@
+CLASS.Hidden = true
+CLASS.Disabled = true
+CLASS.Unlocked = true
+
 CLASS.Base = "zombie_torso"
 
 CLASS.Name = "Shadow Lurker"
