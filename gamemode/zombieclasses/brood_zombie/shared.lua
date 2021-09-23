@@ -7,7 +7,7 @@ CLASS.BetterVersion = "Eradicator"
 
 CLASS.Wave = 3 / 6
 
-CLASS.Health = 280
+CLASS.Health = 225
 CLASS.Speed = 150
 
 CLASS.Points = CLASS.Health/GM.HumanoidZombiePointRatio

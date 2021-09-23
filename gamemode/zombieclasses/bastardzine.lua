@@ -11,7 +11,7 @@ CLASS.OverrideModel = Model("models/Zombie/Poison.mdl")
 
 CLASS.Wave = 5 / 6
 
-CLASS.Health = 275
+CLASS.Health = 230
 CLASS.Speed = 270
 CLASS.SWEP = "weapon_zs_bastardzine"
 

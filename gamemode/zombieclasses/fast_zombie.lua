@@ -22,7 +22,7 @@ CLASS.Infliction = 0.65 -- 65% of players dead
 
 CLASS.Revives = true
 
-CLASS.Health = 150
+CLASS.Health = 130
 CLASS.Speed = 255
 CLASS.SWEP = "weapon_zs_fastzombie"
 

@@ -7,7 +7,7 @@ CLASS.Help = "controls_vile_bloated_zombie"
 
 CLASS.Wave = 4 / 6
 
-CLASS.Health = 650
+CLASS.Health = 560
 CLASS.Speed = 135
 
 CLASS.Points = CLASS.Health/GM.HumanoidZombiePointRatio

@@ -14,7 +14,7 @@ CLASS.SWEP = "weapon_zs_shadowwalker"
 
 CLASS.Wave = 2 / 6
 
-CLASS.Health = 200
+CLASS.Health = 175
 CLASS.Speed = 175
 
 CLASS.Points = CLASS.Health/GM.HumanoidZombiePointRatio

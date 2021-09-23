@@ -5,7 +5,7 @@ CLASS.Help = "controls_skeletal_shambler"
 
 CLASS.Wave = 5 / 6
 
-CLASS.Health = 220
+CLASS.Health = 200
 CLASS.Speed = 165
 
 CLASS.CanTaunt = true

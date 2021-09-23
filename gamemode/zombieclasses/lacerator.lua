@@ -12,7 +12,7 @@ CLASS.Wave = 4 / 6
 
 CLASS.BetterVersion = "Bastardzine"
 
-CLASS.Health = 205
+CLASS.Health = 175
 CLASS.Speed = 260
 CLASS.SWEP = "weapon_zs_lacerator"
 
