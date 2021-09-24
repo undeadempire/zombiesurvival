@@ -411,7 +411,7 @@ GM:AddSkill(SKILL_SANGUINE, "Sanguine", GOOD.."+12 maximum blood armor\n"..BAD..
 GM:AddSkill(SKILL_ANTIGEN, "Antigen", GOOD.."+5% blood armor damage absorption\n"..BAD.."-6 health\n"..BAD.."+10% eating time\n",
 																-2,			4,					{}, TREE_HEALTHTREE)
 -- Speed Tree
-GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+0.75 movement speed\n"..BAD.."-0.5 health",
+GM:AddSkill(SKILL_SPEED1, "Speed I", GOOD.."+1 movement speed\n"..BAD.."-1 health",
 																-4,			6,					{SKILL_NONE, SKILL_SPEED2}, TREE_SPEEDTREE)
 GM:AddSkill(SKILL_SPEED2, "Speed II", GOOD.."+1.5 movement speed\n"..BAD.."-1 health",
 																-4,			4,					{SKILL_SPEED3, SKILL_PHASER, SKILL_SPEED2, SKILL_U_CORRUPTEDFRAGMENT}, TREE_SPEEDTREE)
@@ -1000,8 +1000,8 @@ GM:SetSkillModifierFunction(SKILLMOD_AIM_SHAKE_MUL, GM:MkGenericMod("AimShakeMul
 
 ---------------------------THE SPEEDS-------------------------------------------------------
 --------------SPEED 1------------------
-GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_SPEED, 0.75)
-GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_HEALTH, -.5)
+GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_SPEED, 1)
+GM:AddSkillModifier(SKILL_SPEED1, SKILLMOD_HEALTH, -1)
 --------------SPEED 2------------------
 GM:AddSkillModifier(SKILL_SPEED2, SKILLMOD_SPEED, 1.5)
 GM:AddSkillModifier(SKILL_SPEED2, SKILLMOD_HEALTH, -1)
